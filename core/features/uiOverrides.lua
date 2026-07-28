@@ -30,9 +30,7 @@ function Overrides:OnLoad()
 		C_CVar.SetCVarBitfield('closedInfoFrames', LE_FRAME_TUTORIAL_MOUNT_EQUIPMENT_SLOT_FRAME, true)
 		C_CVar.SetCVarBitfield('closedInfoFrames', LE_FRAME_TUTORIAL_UPGRADEABLE_ITEM_IN_SLOT, true)
 
-		if Addon.Frames:IsEnabled('inventory') then
-			C_CVar.SetCVar('combinedBags', nil)
-		end
+		C_CVar.SetCVar('combinedBags', nil)
 	end
 
 	if BackpackTokenFrame then
@@ -96,7 +94,7 @@ function Overrides:OnLoad()
 end
 
 function Overrides:OnCVar(var)
-	if var == 'combinedBags' and not InCombatLockdown() and Addon.Frames:IsEnabled('inventory') then
+	if var == 'combinedBags' and not InCombatLockdown() then
 		C_CVar.SetCVar('combinedBags', nil)
 	end
 end
