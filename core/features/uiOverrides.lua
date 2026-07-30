@@ -30,7 +30,11 @@ function Overrides:OnLoad()
 		C_CVar.SetCVarBitfield('closedInfoFrames', LE_FRAME_TUTORIAL_MOUNT_EQUIPMENT_SLOT_FRAME, true)
 		C_CVar.SetCVarBitfield('closedInfoFrames', LE_FRAME_TUTORIAL_UPGRADEABLE_ITEM_IN_SLOT, true)
 
-		C_CVar.SetCVar('combinedBags', nil)
+		-- Disable Blizzard's combined bags CVar if Bagnon's inventory module is active,
+		-- as the combined container conflicts with Bagnon's own inventory frames.
+		if Addon.Frames:IsEnabled('inventory') then
+			C_CVar.SetCVar('combinedBags', nil)
+		end
 	end
 
 	if BackpackTokenFrame then
@@ -44,10 +48,18 @@ function Overrides:OnLoad()
 		end
 	end
 
+	-- Intercept SetID on ContainerFrames to toggle parentage based on Bagnon overrides.
+	-- If Bagnon manages the bag, we hide the Blizzard frame under a disabled parent.
+	-- If not, we restore the frame to its default parent only if we previously hid it.
+	-- This prevents breaking Blizzard's parentage when 'combinedBags' is active.
 	for i = 1, NUM_CONTAINER_FRAMES do
 		hooksecurefunc(_G['ContainerFrame' .. i], 'SetID', function(frame, bag)
 			local disabled = Addon.Frames:HasBag(Location(bag))
-			frame:SetParent(disabled and self.Disabled or Parent)
+			if disabled then
+				frame:SetParent(self.Disabled)
+			elseif frame:GetParent() == self.Disabled then
+				frame:SetParent(Parent)
+			end
 		end)
 	end
 
@@ -94,7 +106,7 @@ function Overrides:OnLoad()
 end
 
 function Overrides:OnCVar(var)
-	if var == 'combinedBags' and not InCombatLockdown() then
+	if var == 'combinedBags' and not InCombatLockdown() and Addon.Frames:IsEnabled('inventory') then
 		C_CVar.SetCVar('combinedBags', nil)
 	end
 end
