@@ -285,7 +285,10 @@ function Item:GetQuestInfo()
 end
 
 function Item:IsUpgrade()
-	return (self.hasItem or false) and C.AddOns.IsAddOnLoaded('Pawn') and PawnShouldItemLinkHaveUpgradeArrow(self.info.hyperlink)
+	if self.hasItem and C.AddOns.IsAddOnLoaded('Pawn') then
+		return self.info and self.info.hyperlink and PawnShouldItemLinkHaveUpgradeArrow(self.info.hyperlink)
+	end
+	return false
 end
 
 function Item:GetInventorySlot()
