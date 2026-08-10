@@ -3,9 +3,9 @@
 --]]
 
 local CONFIG = ...
+local NEW = BATTLENET_FONT_COLOR:WrapTextInColorCode(' ' .. NEW_CAPS)
 local L = LibStub('AceLocale-3.0'):NewLocale(CONFIG, 'zhTW')
 if not L then return end
-local NEW = BATTLENET_FONT_COLOR:WrapTextInColorCode(' ' .. NEW_CAPS)
 
 -- filters
 L.InstalledFilters = '已安裝的篩選器'
@@ -14,8 +14,14 @@ L.NewFilter = '新增篩選器'
 L.NewSearch = '新增搜尋'
 L.NewMacro = '新增巨集'
 L.Import = '匯入'
+L.EnterSearch = '輸入搜尋字串：'
 L.SharePopup = '複製此資料並分享：'
 L.ImportPopup = '請貼上要匯入的資料：|n|cnERROR_COLOR:(警告 - 僅從您信任的來源匯入篩選器)|r'
+
+-- automatic. do not translate unless necessary
+L.Help = HELP_LABEL
+L.Money = '金錢'
+L.NewFeature = NEW
 
 -- general options
 L.GeneralOptionsDescription = '這些是一般功能，可以根據您的喜好進行切換。'
@@ -44,12 +50,14 @@ L.ActPanelTip = [[
 如果啟用，此面板將自動定位
 自身，就像|cffffffff法術書|r
 或|cffffffff地城搜尋器|r一樣，並且無法移動。]]
+If enabled, this panel will automatically position
+itself as the standard ones do, such as the |cffffffffSpellbook|r
+or the |cffffffffDungeon Finder|r, and will not be movable.]]
 
 L.BagToggle = '背包列表'
 L.Broker = 'Databroker外掛'
 L.Currency = '通貨'
 L.Deposit = '存放按鈕'
-L.Money = '金錢'
 L.Sidebar = '側邊篩選'
 L.Sort = '排序按鈕'
 L.Search = '切換搜尋'
@@ -75,7 +83,7 @@ L.ItemScale = '物品縮放'
 L.Spacing = '間距'
 L.Alpha = '透明度'
 
--- slots
+-- slot options
 L.SlotOptions = '欄位設定'
 L.SlotOptionsDescription = '這些設置允許您更改在 %s 框架上呈現物品欄位的方式，使其更容易識別。'
 
@@ -111,21 +119,20 @@ L.DisplayOptions = '自動開關'
 L.DisplayOptionsDescription = '這些設置允許您配置當您的背包由於遊戲事件而自動打開或關閉的情況。'
 
 L.DisplayInventory = '自動打開背包'
-L.CloseInventory = '自動關閉背包'
-
 L.Auctioneer = '訪問拍賣場'
 L.Banker = '訪問銀行'
-L.Combat = '進入戰鬥'
 L.Crafting = '製造'
 L.GuildBanker = '訪問公會銀行'
 L.VoidStorageBanker = '訪問虛空銀行'
 L.MailInfo = '檢查信箱'
-L.MapFrame = '打開世界地圖'
 L.Merchant = '離開商人'
-L.PlayerFrame = '開啟角色資訊'
-L.ScrappingMachine = '銷毀裝備'
-L.Socketing = '鑲崁寶石'
+L.Character = '開啟角色資訊時'
 L.TradePartner = '交易物品'
+L.Transmogrifier = '修改物品時'
+
+L.CloseInventory = '自動關閉背包'
+L.MapFrame = '打開世界地圖'
+L.Combat = '進入戰鬥'
 L.Vehicle = '進入載具'
 
 -- info

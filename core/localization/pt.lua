@@ -12,7 +12,7 @@ L.OpenBank = 'Abrir Banco'
 L.OpenGuild = 'Abrir Banco da Guilda'
 L.OpenVault = 'Abrir Cofre'
 
--- terminal
+--terminal
 L.Commands = 'Lista de comandos'
 L.CmdShowInventory = 'Mostra ou oculta o inventário'
 L.CmdShowBank = 'Mostra ou oculta o banco'
@@ -25,17 +25,17 @@ L.ResetConfirm = 'Tem a certeza de que deseja repor %s?|nTodas as definições e
 L.SkinError = 'Erro ao aplicar o tema.'
 L.UpgradeError = 'Problema ao atualizar as definições. Se encontrar problemas, tente repor as suas definições.'
 
---frame titles
+--titles
 L.TitleBags = 'Mochila de %s'
 L.TitleBank = 'Banco de %s'
 L.TitleVault = 'Cofre de %s'
+L.NormalBags = 'Bolsas Normais'
+L.TradeBags = 'Bolsas de Profissão'
+L.AmmoBags = 'Bolsas de Munição'
 
---actions
+--tooltips
 L.Bags = 'Bolsas'
 L.Drag = 'Arrastar'
-L.Guilds = 'Guildas'
-L.Locations = 'Locais'
-L.Characters = 'Personagens'
 L.BrowseItems = 'Navegar Itens'
 L.HideBag = 'Clique para esconder esta bolsa.'
 L.ShowBag = 'Clique para mostrar esta bolsa.'
@@ -44,15 +44,21 @@ L.NumAllowed = '%s Permitidos'
 L.NumWithdraw = '%s Retirar'
 L.NumDeposit = '%s Depositar'
 L.NumRemaining = '%s Restantes'
-
---dropdowns
+L.WarbandMoney = 'Dinheiro do Bando de Guerra'
 L.OfflineViewing = 'Visualização Offline'
+L.Others = 'Outros'
+
+--menus
+L.Characters = 'Personagens'
+L.Guilds = 'Guildas'
+L.Locations = 'Locais'
+L.EnterDescription = 'Inserir Descrição:'
 L.ServerSorting = 'Ordenar pelo Servidor'
-L.ServerSortingTip = 'Se o servidor de jogo deve ordenar os itens, quando disponível.'
-L.CleanupOptions = 'Opções de Limpeza'
-L.LockItems = 'Bloquear Slots de Itens'
-L.RequiresClientSorting = 'Requer ordenação pelo cliente!'
+L.ReverseSorting = 'Ordem Reversa'
 L.PartialFirst = 'Pilhas parciais primeiro'
+L.CleanupOptions = 'Opções de Limpeza'
+L.IncludeReagents = 'Incluir Componentes'
+L.LockItems = 'Bloquear Slots de Itens'
 
 --dialogs
 L.AskMafia = 'Perguntar à Máfia'

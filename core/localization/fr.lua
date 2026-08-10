@@ -25,60 +25,47 @@ L.ResetConfirm = 'Êtes-vous sûr de vouloir réinitialiser %s ?|nTous les param
 L.SkinError = 'Erreur lors de l’application du thème.'
 L.UpgradeError = 'Problème lors de la mise à jour des paramètres. En cas de problème, essayez de réinitialiser vos paramètres.'
 
---frame titles
+--titles
 L.TitleBags = 'Inventaire |2 %s'
 L.TitleBank = 'Banque |2 %s'
 L.TitleVault = 'Chambre du Vide |2 %s'
-
---dropdowns
-L.SelectCharacter = 'Choisir Personnage'
-L.ConfirmDelete = 'Etes-vous sur de vouloir supprimer le cache de %s ?'
-
---interactions
-L.Click = 'Cliquez'
-L.Drag = '<Saisir>'
-L.LeftClick = '<Clic Gauche>'
-L.RightClick = '<Clic Droit>'
-L.DoubleClick = '<Double Clic>'
-L.ShiftClick = '<Shift+Clic>'
+L.NormalBags = 'Sacs normaux'
+L.TradeBags = 'Sacs de métier'
+L.AmmoBags = 'Sacs de munitions'
 
 --tooltips
+L.Bags = 'Sacs'
+L.Drag = '<Saisir>'
+L.BrowseItems = 'Parcourir les objets'
+L.HideBag = 'Clic pour masquer ce sac.'
+L.ShowBag = 'Clic pour afficher ce sac.'
 L.GuildFunds = 'Fonds de Guilde'
-L.TipGoldOnRealm = '%s Totals'
+L.NumAllowed = '%s autorisés'
 L.NumWithdraw = '%d |4retrait:retraits;'
 L.NumDeposit = '%d |4dépôt:dépôts;'
+L.NumRemaining = '%s restants'
+L.WarbandMoney = 'Or du bataillon'
+L.OfflineViewing = 'Consultation hors ligne'
+L.Others = 'Autres'
 
---action tooltips
-L.TipChangePlayer = '%s pour afficher les objets d\'un autre personnage.'
-L.TipCleanItems = 'Tri automatique'
-L.TipConfigure = 'Configuration'
-L.TipDepositReagents = '%s pour déposer tous les composants.'
-L.TipDeposit = '%s pour déposer.'
-L.TipWithdraw = '%s pour retirer (%s restant).'
-L.TipFrameToggle = '%s pour afficher d\'autres fenêtres.'
-L.TipHideBag = '%s pour cacher ce sac.'
-L.TipHideBags = '%s pour cacher l\'affichage des sac.'
-L.TipHideSearch = '%s pour cacher le champ de recherche.'
-L.TipMove = '%s pour déplacer.'
-L.PurchaseBag = '%s pour acheter cet emplacement de sac.'
-L.TipResetPlayer = '%s pour retourner sur le personnage actuel.'
-L.TipShowBag = '%s pour afficher ce sac.'
-L.TipShowBags = '%s pour afficher la fenêtre de vos sacs.'
-L.TipShowBank = '%s pour afficher/cacher votre banque.'
-L.TipShowInventory = '%s pour afficher/cacher votre inventaire.'
-L.TipShowOptions = '%s pour ouvrir le menu des options.'
-L.TipShowSearch = 'Rechercher'
-
---item tooltips
-L.TipCountEquip = 'Équipé : %d'
-L.TipCountBags = 'Sacs : %d'
-L.TipCountBank = 'Banque : %d'
-L.TipCountVault = 'Chambre : %d'
-L.TipCountGuild = 'Guilde : %d'
+--menus
+L.Characters = 'Personages'
+L.Guilds = 'Guildes'
+L.Locations = 'Emplacements'
+L.EnterDescription = 'Saisir une description :'
+L.ServerSorting = 'Tri côté serveur'
+L.ReverseSorting = 'Ordre inverse'
 L.PartialFirst = 'Piles partielles en premier'
+L.CleanupOptions = 'Options de nettoyage'
+L.IncludeReagents = 'Inclure les composants'
+L.LockItems = 'Verrouiller les emplacements'
 
 --dialogs
 L.AskMafia = 'Demander à la Mafia'
+L.ConfirmDelete = 'Etes-vous sur de vouloir supprimer le cache de %s ?'
 L.ConfirmTransfer = 'Déposer un objet retirera toute modification et le rendra non échangeable et non remboursable.|n|nVoulez-vous continuer?'
 L.CannotPurchaseVault = 'Pas assez d\'or pour débloquer la Chambre du Vide|n|n|cffff2020Cost: %s|r'
 L.PurchaseVault = 'Souhaitez-vous débloquer la Banque du Chambre?|n|n|cffffd200Cost:|r %s'
+L.ConfigurationMode = 'Vous êtes maintenant dans le mode de configuration du tri côté client.|n|nCliquez sur les emplacements d'objets pour choisir s'ils doivent être verrouillés pendant le tri.'
+L.OutOfDate = 'Votre version de |cffffd200%s|r est peut-être obsolète !|n%s a signalé avoir la version |cff82c5ff%s|r, veuillez mettre à jour si c'est le cas.'
+L.InvalidVersion = 'Votre copie de |cffffd200%s|r est corrompue ou illégale.|nVeuillez télécharger gratuitement une version officielle.'

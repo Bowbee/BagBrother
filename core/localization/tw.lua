@@ -31,8 +31,9 @@ L.TitleBank = '%s的銀行'
 L.TitleVault = '%s的虛空倉庫'
 L.NormalBags = '普通背包'
 L.TradeBags = '交易背包'
+L.AmmoBags = '彈藥包'
 
---actions
+--tooltips
 L.Bags = '背包欄位'
 L.Drag = '拖曳'
 L.BrowseItems = '查看其他'
@@ -53,11 +54,11 @@ L.Guilds = '公會銀行'
 L.Locations = '位置'
 L.EnterDescription = '輸入描述：'
 L.ServerSorting = '伺服器端排序'
-L.ServerSortingTip = '是否讓遊戲伺服器對可用的項目進行排序'
+L.ReverseSorting = '反向排序'
+L.PartialFirst = '部分堆疊優先'
 L.CleanupOptions = '清理選項'
 L.IncludeReagents = '包含材料'
 L.LockItems = '鎖定物品欄位'
-L.PartialFirst = '部分堆疊優先'
 
 --dialogs
 L.AskMafia = '詢問黑手黨'
