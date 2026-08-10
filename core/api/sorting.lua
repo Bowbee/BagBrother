@@ -243,6 +243,9 @@ end
 function Sort.Rule(a, b)
 	for _,prop in pairs(Sort.Properties) do
 		if a[prop] ~= b[prop] then
+			if prop == 'stackCount' and Sort.target and Sort.target.profile.partialFirst then
+				return a[prop] < b[prop]
+			end
 			return a[prop] > b[prop]
 		end
 	end

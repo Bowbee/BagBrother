@@ -57,6 +57,7 @@ L.ServerSortingTip = '是否讓遊戲伺服器對可用的項目進行排序'
 L.CleanupOptions = '清理選項'
 L.IncludeReagents = '包含材料'
 L.LockItems = '鎖定物品欄位'
+L.PartialFirst = '部分堆疊優先'
 
 --dialogs
 L.AskMafia = '詢問黑手黨'

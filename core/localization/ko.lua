@@ -77,6 +77,7 @@ L.TipCountBank = '은행: %d'
 L.TipCountVault = '공허: %d'
 L.TipCountGuild = '금고: %d'
 L.TipDelimiter = '/'
+L.PartialFirst = '부분 묶음 우선'
 
 --dialogs
 L.AskMafia = '마피아에 문의'
