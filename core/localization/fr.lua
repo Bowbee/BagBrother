@@ -75,6 +75,7 @@ L.TipCountBags = 'Sacs : %d'
 L.TipCountBank = 'Banque : %d'
 L.TipCountVault = 'Chambre : %d'
 L.TipCountGuild = 'Guilde : %d'
+L.PartialFirst = 'Piles partielles en premier'
 
 --dialogs
 L.AskMafia = 'Demander à la Mafia'

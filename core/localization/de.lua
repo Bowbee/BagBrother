@@ -76,6 +76,7 @@ L.TipCountBags = 'Taschen: %d'
 L.TipCountBank = 'Bank: %d'
 L.TipCountVault = 'Leerenlager: %d'
 L.TipCountGuild = 'Gilde: %d'
+L.PartialFirst = 'Teilstapel zuerst'
 
 --dialogs
 L.AskMafia = 'Mafia fragen'

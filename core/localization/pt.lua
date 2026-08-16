@@ -52,6 +52,7 @@ L.ServerSortingTip = 'Se o servidor de jogo deve ordenar os itens, quando dispon
 L.CleanupOptions = 'Opções de Limpeza'
 L.LockItems = 'Bloquear Slots de Itens'
 L.RequiresClientSorting = 'Requer ordenação pelo cliente!'
+L.PartialFirst = 'Pilhas parciais primeiro'
 
 --dialogs
 L.AskMafia = 'Perguntar à Máfia'

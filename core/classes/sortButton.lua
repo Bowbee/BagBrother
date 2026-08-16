@@ -53,7 +53,10 @@ function SortButton:OnClick(button)
 			if hasServer then
 				menu:CreateCheckbox(L.ServerSorting,
 					function() return self.frame.profile.serverSort end,
-					function() self.frame.profile.serverSort = not self.frame.profile.serverSort end)
+					function(_, _, menu)
+						self.frame.profile.serverSort = not self.frame.profile.serverSort
+						menu:ReinitializeAll()
+					end)
 			end
 
 			menu:CreateCheckbox(L.ReverseSorting,
@@ -75,6 +78,11 @@ function SortButton:OnClick(button)
 			menu:CreateCheckbox('Reverse Looting',
 				function() return C.Container.GetInsertItemsLeftToRight() end,
 				function(_,_, menu) DelayedToggle(menu, 'GetInsertItemsLeftToRight', 'SetInsertItemsLeftToRight') end)
+
+			local partial = menu:CreateCheckbox(L.PartialFirst,
+				function() return self.frame.profile.partialFirst end,
+				function() self.frame.profile.partialFirst = not self.frame.profile.partialFirst end)
+			partial:SetEnabled(not (hasServer and self.frame.profile.serverSort))
 
 			menu:CreateButton('|A:legionmission-lock:14:14|a ' .. L.LockItems, function() self:OnLocking() end)
 		end)

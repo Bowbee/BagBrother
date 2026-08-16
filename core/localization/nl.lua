@@ -73,6 +73,7 @@ L.TipCountBags = 'Tassen: %d'
 L.TipCountBank = 'Bank: %d'
 L.TipCountVault = 'Lege Opslag: %d'
 L.TipCountGuild = 'Gilde: %d'
+L.PartialFirst = 'Gedeeltelijke stapels eerst'
 
 --dialogs
 L.AskMafia = 'Vraag de Maffia'

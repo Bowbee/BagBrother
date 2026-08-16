@@ -52,6 +52,7 @@ L.ServerSortingTip = 'Si debes permitir que el servidor del juego reordena los o
 L.CleanupOptions = 'Opciones de limpieza'
 L.LockItems = 'Bloquear ranuras'
 L.RequiresClientSorting = '¡Requiere reordenamiento al lado del cliente!'
+L.PartialFirst = 'Pilas parciales primero'
 
 --dialogs
 L.AskMafia = 'Pregunta a La Mafia'
