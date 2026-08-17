@@ -79,10 +79,10 @@ function SortButton:OnClick(button)
 				function() return C.Container.GetInsertItemsLeftToRight() end,
 				function(_,_, menu) DelayedToggle(menu, 'GetInsertItemsLeftToRight', 'SetInsertItemsLeftToRight') end)
 
-			local partial = menu:CreateCheckbox(L.PartialFirst,
+			--[[local partial = menu:CreateCheckbox(L.PartialFirst,
 				function() return self.frame.profile.partialFirst end,
 				function() self.frame.profile.partialFirst = not self.frame.profile.partialFirst end)
-			partial:SetEnabled(not (hasServer and self.frame.profile.serverSort))
+			partial:SetEnabled(not (hasServer and self.frame.profile.serverSort))]]-- will reorganize UI first, to not cause confusion
 
 			menu:CreateButton('|A:legionmission-lock:14:14|a ' .. L.LockItems, function() self:OnLocking() end)
 		end)
