@@ -22,6 +22,8 @@ function Overrides:OnLoad()
 	self.Disabled = CreateFrame('Frame', nil, Parent)
 	self.Disabled:SetAllPoints()
 	self.Disabled:Hide()
+	self.Tiny = CreateFrame('Frame', nil, Parent)
+	self.Tiny:SetScale(0.001)
 
 	if LE_FRAME_TUTORIAL_EQUIP_REAGENT_BAG then
 		C_CVar.SetCVarBitfield('closedInfoFrames', LE_FRAME_TUTORIAL_EQUIP_REAGENT_BAG, true)
@@ -85,7 +87,11 @@ function Overrides:OnLoad()
 			local enabled = Addon.Frames:Show(frame)
 			panel.__onhide = panel.__onhide or panel:GetScript('OnHide')
 			panel:SetScript('OnHide', not enabled and panel.__onhide or nil)
-			panel:SetParent(enabled and self.Disabled or UIParent)
+			panel:SetParent(enabled and self.Tiny or UIParent)
+
+			if enabled then
+				self:Delay('OnHiding') -- on 12.1 blizzard screwed up GuildBank implemenation
+			end
 		end
 	end)
 
@@ -104,5 +110,14 @@ end
 function Overrides:OnCVar(var)
 	if var == 'combinedBags' and not InCombatLockdown() and Addon.Frames:IsEnabled('inventory') then
 		C_CVar.SetCVar('combinedBags', nil)
+	end
+end
+
+function Overrides:OnHiding()
+	for i = 1, select('#', self.Tiny:GetChildren()) do
+		local frame = select(i, self.Tiny:GetChildren())
+		if frame then
+			frame:SetParent(self.Disabled)
+		end
 	end
 end
