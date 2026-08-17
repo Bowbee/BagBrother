@@ -3,7 +3,7 @@
 	All Rights Reserved
 --]]
 
-local PATRONS = {{title='Jenkins',people={'Gnare','Johnny Rabbit','Debora S Ogormanw'}},{title='Ambassador',people={'Julia F','Lolari ','Ptsdthegamer','Swallow@area52','Peter Hollaubek','Jury ','Bc Spear','Adam Mann','Michael Kinasz','Ronald Platz','M Prieto','Goldpaw','Brian Joaquin','Ole Jonny Søndenå','Airdrigh','Sean Locko'}}} -- generated patron list
+local PATRONS = {{title='Jenkins',people={'Gnare','Johnny Rabbit','Debora S Ogormanw'}},{title='Ambassador',people={'Julia F','Lolari ','Ptsdthegamer','Peter Hollaubek','Michael Kinasz','Jury ','Bc Spear','Adam Mann','Brian Joaquin','Ole Jonny Søndenå','Airdrigh','Sean Locko','Rackette'}}} -- generated patron list
 local L, ADDON, Addon = select(2, ...).Addon()
 local Sushi = LibStub('Sushi-3.2')
 
