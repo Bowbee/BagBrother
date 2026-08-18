@@ -3,7 +3,6 @@
 --]]
 
 local CONFIG = ...
-local NEW = BATTLENET_FONT_COLOR:WrapTextInColorCode(' ' .. NEW_CAPS)
 local L = LibStub('AceLocale-3.0'):NewLocale(CONFIG, 'nlNL')
 if not L then return end
 
@@ -21,8 +20,7 @@ L.ImportPopup = 'Plak gegevens om te importeren:|n|cnERROR_COLOR:(Waarschuwing -
 -- automatic. do not translate unless necessary
 L.Help = HELP_LABEL
 L.Money = MONEY
-L.NewFeature = NEW
-
+ 
 -- general options
 L.GeneralOptionsDescription = 'Dit zijn algemene functies die kunnen worden in- of uitgeschakeld, afhankelijk van je voorkeuren.'
 
@@ -55,16 +53,16 @@ L.BagToggle = 'Tas Wisselen'
 L.Broker = 'Databroker Carrousel'
 L.Currency = 'Valuta'
 L.Deposit = 'Stortknop'
-L.Sidebar = 'Zijfilters' .. NEW
+L.Sidebar = 'Zijfilters'
 L.Sort = 'Sorteer Knop'
 L.Search = 'Zoek Wisselen'
 L.Options = 'Opties Knop'
-L.Tabs = 'Onderste filters' .. NEW
+L.Tabs = 'Onderste filters'
 
 L.Appearance = 'Uiterlijk'
 L.Layer = 'Laag'
-L.BagBreak = 'Tas Onderbreken' .. NEW
-L.BreakSpace = 'Regelafstand' .. NEW
+L.BagBreak = 'Tas Onderbreken'
+L.BreakSpace = 'Regelafstand'
 L.ByType = 'Op type'
 L.ReverseBags = 'Omgekeerde Tasvolgorde'
 L.ReverseSlots = 'Omgekeerde Slotvolgorde'
@@ -73,7 +71,7 @@ L.Color = 'Achtergrondkleur'
 L.BorderColor = 'Randkleur'
 
 L.Strata = 'Frame Laag'
-L.Skin = 'Uiterlijk' .. NEW
+L.Skin = 'Uiterlijk'
 L.Columns = 'Kolommen'
 L.Scale = 'Schaal'
 L.ItemScale = 'Item Schaal'

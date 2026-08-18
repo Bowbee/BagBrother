@@ -6,7 +6,7 @@
 
 local C = LibStub('C_Everywhere').AddOns
 local L, ADDON, Addon, Config = select(2, ...).Addon()
-local Frames = Addon.GeneralOptions:New('FrameOptions', CreateAtlasMarkup('Vehicle-HammerGold-2') .. L.NewFeature)
+local Frames = Addon.GeneralOptions:New('FrameOptions', CreateAtlasMarkup('Vehicle-HammerGold-2'))
 
 function Frames:Populate()
 	local enabled = Addon.Frames:IsEnabled(self.frame)

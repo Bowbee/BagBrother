@@ -3,7 +3,6 @@
 --]]
 
 local CONFIG = ...
-local NEW = BATTLENET_FONT_COLOR:WrapTextInColorCode(' ' .. NEW_CAPS)
 local L = LibStub('AceLocale-3.0'):NewLocale(CONFIG, 'frFR')
 if not L then return end
 
@@ -17,11 +16,6 @@ L.Import = 'Importer'
 L.EnterSearch = 'Saisir la requête de recherche :'
 L.SharePopup = 'Copiez ces données et partagez-les :'
 L.ImportPopup = 'Collez les données à importer :|n|cnERROR_COLOR:(Avertissement - n’importez que des filtres provenant de sources fiables)|r'
-
--- automatic. do not translate unless necessary
-L.Help = HELP_LABEL
-L.Money = MONEY
-L.NewFeature = NEW
 
 -- general options
 L.GeneralOptionsDescription = 'Configuration des options générales de %s'
@@ -56,16 +50,16 @@ L.BagToggle = 'Fenêtre du sac'
 L.Broker = 'Activer le DataBroker'
 L.Currency = 'Suivi des monnaies'
 L.Deposit = 'Bouton de dépôt'
-L.Sidebar = 'Filtres latéraux' .. NEW
+L.Sidebar = 'Filtres latéraux'
 L.Sort = 'Bouton de tri'
 L.Search = 'Champ de recherche'
 L.Options = 'Affichage des options'
-L.Tabs = 'Filtres du bas' .. NEW
+L.Tabs = 'Filtres du bas'
 
 L.Appearance = 'Apparence'
 L.Layer = 'Couche'
-L.BagBreak = 'Séparation entre les sacs' .. NEW
-L.BreakSpace = 'Espacement de saut' .. NEW
+L.BagBreak = 'Séparation entre les sacs'
+L.BreakSpace = 'Espacement de saut'
 L.ByType = 'Par type'
 L.ReverseBags = 'Inverser ordre des sacs'
 L.ReverseSlots = 'Inverser ordre de tri'
@@ -74,7 +68,7 @@ L.Color = 'Couleur de la fenêtre'
 L.BorderColor = 'Couleur de bordure'
 
 L.Strata = 'Couche'
-L.Skin = 'Apparence' .. NEW
+L.Skin = 'Apparence'
 L.Columns = 'Colonnes'
 L.Scale = 'Echelle'
 L.ItemScale = 'Échelle des objets'

@@ -4,7 +4,6 @@
 --]]
 
 local CONFIG = ...
-local NEW = BATTLENET_FONT_COLOR:WrapTextInColorCode(' ' .. NEW_CAPS)
 local L = LibStub('AceLocale-3.0'):NewLocale(CONFIG, 'deDE')
 if not L then return end
 
@@ -18,11 +17,6 @@ L.Import = 'Importieren'
 L.EnterSearch = 'Suchanfrage eingeben:'
 L.SharePopup = 'Diese Daten kopieren und teilen:'
 L.ImportPopup = 'Daten zum Import einfügen:|n|cnERROR_COLOR:(Warnung – importiere nur Filter aus vertrauenswürdigen Quellen)|r'
-
--- automatic. do not translate unless necessary
-L.Help = HELP_LABEL
-L.Money = MONEY
-L.NewFeature = NEW
 
 -- general options
 L.GeneralOptionsDescription = 'Allgemeine Einstellungen für %s anpassen'
@@ -56,16 +50,16 @@ L.BagToggle = 'Taschenschaltflächen'
 L.Broker = 'Databroker'
 L.Currency = 'Währungstracker'
 L.Deposit = 'Einzahlungsschaltfläche'
-L.Sidebar = 'Seitenfilter' .. NEW
+L.Sidebar = 'Seitenfilter'
 L.Sort = 'Sortierschaltfläche'
 L.Search = 'Suchsschaltfläche'
 L.Options = 'Optionenschaltfläche'
-L.Tabs = 'Untere Filter' .. NEW
+L.Tabs = 'Untere Filter'
 
 L.Appearance = 'Erscheinung'
 L.Layer = 'Ebene'
-L.BagBreak = 'Trennen der Taschen aktivieren' .. NEW
-L.BreakSpace = 'Zeilenabstand' .. NEW
+L.BagBreak = 'Trennen der Taschen aktivieren'
+L.BreakSpace = 'Zeilenabstand'
 L.ByType = 'Nach Typ'
 L.ReverseBags = 'Taschen umkehren'
 L.ReverseSlots = 'Slots umkehren'
@@ -74,7 +68,7 @@ L.Color = 'Farbe des Fensters'
 L.BorderColor = 'Farbe des Fensterrands'
 
 L.Strata = 'Ebene'
-L.Skin = 'Skin' .. NEW
+L.Skin = 'Skin'
 L.Columns = 'Spalten'
 L.Scale = 'Skalierung'
 L.ItemScale = 'Gegenstandsskalierung'

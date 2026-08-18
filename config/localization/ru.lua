@@ -3,7 +3,6 @@
 --]]
 
 local CONFIG = ...
-local NEW = BATTLENET_FONT_COLOR:WrapTextInColorCode(' ' .. NEW_CAPS)
 local L = LibStub('AceLocale-3.0'):NewLocale(CONFIG, 'ruRU')
 if not L then return end
 
@@ -17,12 +16,7 @@ L.Import = 'Импорт'
 L.EnterSearch = 'Введите поисковый запрос:'
 L.SharePopup = 'Скопируйте эти данные и поделитесь:'
 L.ImportPopup = 'Вставьте данные для импорта:|n|cnERROR_COLOR:(Предупреждение — импортируйте фильтры только из доверенных источников)|r'
-
--- automatic. do not translate unless necessary
-L.Help = HELP_LABEL
-L.Money = MONEY
-L.NewFeature = NEW
-
+ 
 -- general options
 L.GeneralOptionsDescription = 'Общие функции, которые вы можете настроить в соответствии со своими предпочтениями.'
 
@@ -54,16 +48,16 @@ L.BagToggle = 'Кнопка сумок'
 L.Broker = 'DataBroker'
 L.Currency = 'Валюта'
 L.Deposit = 'Кнопка вклада'
-L.Sidebar = 'Боковые фильтры' .. NEW
+L.Sidebar = 'Боковые фильтры'
 L.Sort = 'Кнопка сортировки'
 L.Search = 'Кнопка поиска'
 L.Options = 'Кнопка настроек'
-L.Tabs = 'Нижние фильтры' .. NEW
+L.Tabs = 'Нижние фильтры'
 
 L.Appearance = 'Внешний вид'
 L.Layer = 'Слой'
-L.BagBreak = 'Каждая сумка с новой строки' .. NEW
-L.BreakSpace = 'Интервал переноса' .. NEW
+L.BagBreak = 'Каждая сумка с новой строки'
+L.BreakSpace = 'Интервал переноса'
 L.ByType = 'По типу'
 L.ReverseBags = 'Обратный порядок сумок'
 L.ReverseSlots = 'Обратный порядок ячеек'
@@ -72,7 +66,7 @@ L.Color = 'Цвет фона окна'
 L.BorderColor = 'Цвет границы окна'
 
 L.Strata = 'Слой окна'
-L.Skin = 'Оформление' .. NEW
+L.Skin = 'Оформление'
 L.Columns = 'Столбцы'
 L.Scale = 'Масштаб'
 L.ItemScale = 'Масштаб предметов'

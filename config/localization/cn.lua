@@ -4,7 +4,6 @@
 --]]
 
 local CONFIG = ...
-local NEW = BATTLENET_FONT_COLOR:WrapTextInColorCode(' ' .. NEW_CAPS)
 local L = LibStub('AceLocale-3.0'):NewLocale(CONFIG, 'zhCN')
 if not L then return end
 
@@ -18,11 +17,6 @@ L.Import = '导入'
 L.EnterSearch = '输入搜索查询：'
 L.SharePopup = '复制此数据并分享：'
 L.ImportPopup = '粘贴要导入的数据：|n|cnERROR_COLOR:(警告 - 仅从可信来源导入过滤器)|r'
-
--- automatic. do not translate unless necessary
-L.Help = HELP_LABEL
-L.Money = MONEY
-L.NewFeature = NEW
 
 -- general options
 L.GeneralOptionsDescription = '这些通用功能可以依据配置切换。'
@@ -56,16 +50,16 @@ L.BagToggle = '背包切换'
 L.Broker = 'Databroker 插件'
 L.Currency = '货币'
 L.Deposit = '存入按钮'
-L.Sidebar = '侧边过滤器' .. NEW
+L.Sidebar = '侧边过滤器'
 L.Sort = '整理按钮'
 L.Search = '切换搜索'
 L.Options = '选项按钮'
-L.Tabs = '底部过滤器' .. NEW
+L.Tabs = '底部过滤器'
 
 L.Appearance = '外观'
 L.Layer = '层级'
 L.BagBreak = '背包分散'
-L.BreakSpace = '换行间距' .. NEW
+L.BreakSpace = '换行间距'
 L.ByType = '按类型'
 L.ReverseBags = '反向背包排列'
 L.ReverseSlots = '反向物品排列'
@@ -74,7 +68,7 @@ L.Color = '背景颜色'
 L.BorderColor = '边框颜色'
 
 L.Strata = '框架层级'
-L.Skin = '皮肤' .. NEW
+L.Skin = '皮肤'
 L.Columns = '列数'
 L.Scale = '缩放'
 L.ItemScale = '物品缩放'

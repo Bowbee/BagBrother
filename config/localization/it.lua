@@ -3,7 +3,6 @@
 ]]
 
 local CONFIG = ...
-local NEW = BATTLENET_FONT_COLOR:WrapTextInColorCode(' ' .. NEW_CAPS)
 local L = LibStub('AceLocale-3.0'):NewLocale(CONFIG, 'itIT')
 if not L then return end
 
@@ -17,11 +16,6 @@ L.Import = 'Importa'
 L.EnterSearch = 'Inserisci stringa di ricerca:'
 L.SharePopup = 'Copia questi dati e condividili:'
 L.ImportPopup = 'Incolla i dati da importare:|n|cnERROR_COLOR:(Avviso - importa solo filtri da fonti affidabili)|r'
-
--- automatic. do not translate unless necessary
-L.Help = HELP_LABEL
-L.Money = MONEY
-L.NewFeature = NEW
 
 -- general options
 L.GeneralOptionsDescription = 'Impostazioni generali di configurazioni per %s.'
@@ -54,16 +48,16 @@ L.BagToggle = 'Attiva Riquadro Borse'
 L.Broker = 'Plugins Databroker'
 L.Currency = 'Tracciatore Valute'
 L.Deposit = 'Pulsante di Deposito'
-L.Sidebar = 'Filtri Laterali' .. NEW
+L.Sidebar = 'Filtri Laterali'
 L.Sort = "Pulsante per l'Ordinamento"
 L.Search = 'Pulsante di Ricerca'
 L.Options = 'Pulsante delle Opzioni'
-L.Tabs = 'Filtri Inferiori' .. NEW
+L.Tabs = 'Filtri Inferiori'
 
 L.Appearance = 'Aspetto'
 L.Layer = 'Livello'
-L.BagBreak = 'Separazione tra Borse' .. NEW
-L.BreakSpace = 'Spaziatura di Interruzione' .. NEW
+L.BagBreak = 'Separazione tra Borse'
+L.BreakSpace = 'Spaziatura di Interruzione'
 L.ByType = 'Per Tipo'
 L.ReverseBags = 'Inverti le Borse'
 L.ReverseSlots = 'Inverti gli Scomparti'
@@ -72,7 +66,7 @@ L.Color = 'Colore della Finestra'
 L.BorderColor = 'Colore del Bordo'
 
 L.Strata = 'Livello'
-L.Skin = 'Stile' .. NEW
+L.Skin = 'Stile'
 L.Columns = 'Colonne'
 L.Scale = 'Proporzione'
 L.ItemScale = 'Scala di Oggetti'

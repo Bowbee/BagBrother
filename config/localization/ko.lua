@@ -3,7 +3,6 @@
 --]]
 
 local CONFIG = ...
-local NEW = BATTLENET_FONT_COLOR:WrapTextInColorCode(' ' .. NEW_CAPS)
 local L = LibStub('AceLocale-3.0'):NewLocale(CONFIG, 'koKR')
 if not L then return end
 
@@ -17,11 +16,6 @@ L.Import = '가져오기'
 L.EnterSearch = '검색어 입력:'
 L.SharePopup = '이 데이터를 복사하여 공유하세요:'
 L.ImportPopup = '가져올 데이터를 붙여넣으세요:|n|cnERROR_COLOR:(경고 - 신뢰할 수 있는 출처의 필터만 가져오세요)|r'
-
--- automatic. do not translate unless necessary
-L.Help = HELP_LABEL
-L.Money = MONEY
-L.NewFeature = NEW
 
 -- general options
 L.GeneralOptionsDescription = '환경 설정에 따라 설정을 전환 할 수 있는 일반적인 기능입니다.'
@@ -55,16 +49,16 @@ L.BagToggle = '가방 표시'
 L.Broker = 'Databroker 플러그인 표시'
 L.Currency = '화폐 추적기'
 L.Deposit = '입금 버튼'
-L.Sidebar = '측면 필터' .. NEW
+L.Sidebar = '측면 필터'
 L.Sort = '정리 버튼 표시'
 L.Search = '검색 버튼 표시'
 L.Options = '설정 버튼 표시'
-L.Tabs = '하단 필터' .. NEW
+L.Tabs = '하단 필터'
 
 L.Appearance = '모양'
 L.Layer = '레이어'
-L.BagBreak = '가방 별로 구분하여 표시' .. NEW
-L.BreakSpace = '줄 바꿈 간격' .. NEW
+L.BagBreak = '가방 별로 구분하여 표시'
+L.BreakSpace = '줄 바꿈 간격'
 L.ByType = '종류별'
 L.ReverseBags = '가방 순서 반대로'
 L.ReverseSlots = '칸 순서 반대로'
@@ -73,7 +67,7 @@ L.Color = '배경 색상'
 L.BorderColor = '테두리 색상'
 
 L.Strata = '프레임 레이어'
-L.Skin = '스킨' .. NEW
+L.Skin = '스킨'
 L.Columns = '칸 수'
 L.Scale = '크기 비율'
 L.ItemScale = '아이템 크기 비율'

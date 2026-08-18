@@ -3,7 +3,6 @@
 --]]
 
 local CONFIG = ...
-local NEW = BATTLENET_FONT_COLOR:WrapTextInColorCode(' ' .. NEW_CAPS)
 local L = LibStub('AceLocale-3.0'):NewLocale(CONFIG, 'zhTW')
 if not L then return end
 
@@ -19,10 +18,8 @@ L.SharePopup = '複製此資料並分享：'
 L.ImportPopup = '請貼上要匯入的資料：|n|cnERROR_COLOR:(警告 - 僅從您信任的來源匯入篩選器)|r'
 
 -- automatic. do not translate unless necessary
-L.Help = HELP_LABEL
 L.Money = '金錢'
-L.NewFeature = NEW
-
+ 
 -- general options
 L.GeneralOptionsDescription = '這些是一般功能，可以根據您的喜好進行切換。'
 
@@ -63,8 +60,8 @@ L.Tabs = '底部篩選'
 
 L.Appearance = '外觀'
 L.Layer = '階層'
-L.BagBreak = '根據背包顯示' .. NEW
-L.BreakSpace = '分隔間距' .. NEW
+L.BagBreak = '根據背包顯示'
+L.BreakSpace = '分隔間距'
 L.ByType = '根據類型'
 L.ReverseBags = '反轉背包順序'
 L.ReverseSlots = '反轉欄位順序'
@@ -73,7 +70,7 @@ L.Color = '背景顏色'
 L.BorderColor = '邊框顏色'
 
 L.Strata = '框架層級'
-L.Skin = '樣式'  .. NEW
+L.Skin = '樣式' 
 L.Columns = '列'
 L.Scale = '縮放'
 L.ItemScale = '物品縮放'
