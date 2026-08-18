@@ -109,8 +109,7 @@ function Sort:GetSpaces()
 
 					item.class = Search:IsQuestItem(id) and Enum.ItemClass.Questitem or class or 14
 					item.set = (item.class < Enum.ItemClass.Weapon and 0) or Search:BelongsToSet(id) and 1 or 2
-					item.stackSize = self.target.profile.partialFirst and -stack or stack
-					item.subclass, item.equip, item.level = subclass or -1, equip, level
+					item.subclass, item.equip, item.level, item.stackSize = subclass or -1, equip, level, stack
 					item.family = C.GetItemFamily(id) or 0
 				elseif item == Addon.None then
 					item = {}
@@ -161,6 +160,12 @@ function Sort:GetOrder(spaces, family)
 
 		if space.family == family then
 			tinsert(slots, space)
+		end
+	end
+
+	if self.target.profile.partialFirst then
+		for _, item in ipairs(order) do
+			item.stackCount = -(item.stackCount or 1)
 		end
 	end
 
