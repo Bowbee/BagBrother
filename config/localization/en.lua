@@ -17,6 +17,11 @@ L.EnterSearch = 'Enter Search Query:'
 L.SharePopup = 'Copy this data and share:'
 L.ImportPopup = 'Paste data to import:|n|cnERROR_COLOR:(Warning - only import filters from sources you trust)|r'
 
+-- automatic. do not translate unless necessary
+L.Help = HELP_LABEL
+L.Money = MONEY
+L.NewFeature = NEW
+
 -- general options
 L.GeneralOptionsDescription = 'These are general features that can be toggled depending on your preferences.'
 
@@ -58,7 +63,7 @@ L.Tabs = 'Bottom Filters'
 L.Appearance = 'Appearance'
 L.Layer = 'Layer'
 L.BagBreak = 'Bag Break'
-L.BreakSpace = 'Break Spacing' 
+L.BreakSpace = 'Break Spacing'
 L.ByType = 'By Type'
 L.ReverseBags = 'Reverse Bag Order'
 L.ReverseSlots = 'Reverse Slot Order'
