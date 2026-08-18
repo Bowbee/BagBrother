@@ -3,7 +3,7 @@
 --]]
 
 local ADDON = ...
-local L = LibStub('AceLocale-3.0'):NewLocale(ADDON, 'esES') or LibStub('AceLocale-3.0'):NewLocale(ADDON, 'esMX')
+local L = LibStub('AceLocale-3.0'):NewLocale(ADDON, 'esES')
 if not L then return end
 
 --keybindings
@@ -12,7 +12,7 @@ L.OpenBank = 'Mostrar banco'
 L.OpenGuild = 'Mostrar banco de hermandad'
 L.OpenVault = 'Mostrar depósito del vacío'
 
--- terminal
+--terminal
 L.Commands = 'Lista de comandos'
 L.CmdShowInventory = 'Muestra u oculta tu inventario'
 L.CmdShowBank = 'Muestra u oculta tu banco'
@@ -25,34 +25,40 @@ L.ResetConfirm = '¿Seguro que quieres restablecer %s?|nSe perderán todos los a
 L.SkinError = 'Error al aplicar la apariencia.'
 L.UpgradeError = 'Problema al actualizar la configuración. Si tienes problemas, intenta restablecer la configuración.'
 
---frame titles
+--titles
 L.TitleBags = 'Inventario de %s'
 L.TitleBank = 'Banco de %s'
 L.TitleVault = 'Depósito del Vacío de %s'
+L.NormalBags = 'Bolsas normales'
+L.TradeBags = 'Bolsas de profesión'
+L.AmmoBags = 'Bolsas de munición'
 
---actions
+--tooltips
+L.Bags = 'Bolsas'
 L.Drag = 'Arrastrar'
-L.Guilds = 'Hermandad'
-L.Locations = 'Ubicación'
-L.Characters = 'Personajes'
 L.BrowseItems = 'Navegar objetos'
 L.HideBag = 'Haz clic para ocultar esta bolsa.'
 L.ShowBag = 'Haz clic para mostrar esta bolsa.'
 L.GuildFunds = 'Fondos de la hermandad'
-L.TipDeposit = '%s para depositar.'
-L.TipWithdraw = '%s para retirar (%s restantes).'
+L.NumAllowed = '%s permitido'
 L.NumWithdraw = 'Retirar %s'
 L.NumDeposit = 'Depositar %s'
 L.NumRemaining = '%s Restantes'
-
---dropdowns
+L.WarbandMoney = 'Dinero de la banda de guerra'
 L.OfflineViewing = 'Visualización sin conexión'
+L.Others = 'Otros'
+
+--menus
+L.Characters = 'Personajes'
+L.Guilds = 'Hermandad'
+L.Locations = 'Ubicación'
+L.EnterDescription = 'Introducir descripción:'
 L.ServerSorting = 'Reordenamiento al lado del servidor'
-L.ServerSortingTip = 'Si debes permitir que el servidor del juego reordena los objetos.'
-L.CleanupOptions = 'Opciones de limpieza'
-L.LockItems = 'Bloquear ranuras'
-L.RequiresClientSorting = '¡Requiere reordenamiento al lado del cliente!'
+L.ReverseSorting = 'Orden inverso'
 L.PartialFirst = 'Pilas parciales primero'
+L.CleanupOptions = 'Opciones de limpieza'
+L.IncludeReagents = 'Incluir componentes'
+L.LockItems = 'Bloquear ranuras'
 
 --dialogs
 L.AskMafia = 'Pregunta a La Mafia'

@@ -3,9 +3,9 @@
 --]]
 
 local CONFIG = ...
+local NEW = BATTLENET_FONT_COLOR:WrapTextInColorCode(' ' .. NEW_CAPS)
 local L = LibStub('AceLocale-3.0'):NewLocale(CONFIG, 'ptBR')
 if not L then return end
-local NEW = BATTLENET_FONT_COLOR:WrapTextInColorCode(' ' .. NEW_CAPS)
 
 -- filters
 L.InstalledFilters = 'Filtros instalados'
@@ -14,24 +14,31 @@ L.NewFilter = 'Novo filtro'
 L.NewSearch = 'Nova pesquisa'
 L.NewMacro = 'Nova macro'
 L.Import = 'Importar'
+L.EnterSearch = 'Inserir Consulta de Busca:'
 L.SharePopup = 'Copia estes dados e partilha-os:'
 L.ImportPopup = 'Cola os dados para importar:|n|cnERROR_COLOR:(Aviso — importa apenas filtros de fontes em que confies)|r'
 
--- general
+-- automatic. do not translate unless necessary
+L.Help = HELP_LABEL
+L.Money = MONEY
+L.NewFeature = NEW
+
+-- general options
 L.GeneralOptionsDescription = 'Estas são características gerais que podem ser ativadas ou desativadas de acordo com suas preferências.'
 
-L.Locked = 'Bloquear Posição das Janelas'
 L.CountItems = 'Contar Stock na Descrição de Itens'
 L.CountGuild = 'Incluir Bancos de Guildas'
 L.CountCurrency = 'Contar Stock na Descrição de Moedas'
-L.FlashFind = 'Pesquisa Rápida'
-L.FlashFindTip = 'Se ativado, ao pressionar alt e clicar num item, todos os espaços contendo esse mesmo item serão destacados.'
-L.DisplayBlizzard = 'Mostrar Janelas da Blizzard para Bolsas Desligadas'
-L.DisplayBlizzardTip = 'Se ativado, os paineis padrão da Blizzard seram exibido para bolsas do inventário ou banco escondidos.\n\n|cffff1919Necessário recarregar a IU.|r'
 L.ConfirmGlobals = 'Tens a certeza que queres desligar a configuração individual desta personagem? Todas as diferenças individuais serão perdidas.'
 L.CharacterSpecific = 'Configuração Individual por Personagem'
+L.DisplayBlizzard = 'Mostrar Janelas da Blizzard para Bolsas Desligadas'
+L.DisplayBlizzardTip = 'Se ativado, os paineis padrão da Blizzard seram exibido para bolsas do inventário ou banco escondidos.\n\n|cffff1919Necessário recarregar a IU.|r'
+L.Locked = 'Bloquear Posição das Janelas'
+L.FlashFind = 'Pesquisa Rápida'
+L.FlashFindTip = 'Se ativado, ao pressionar alt e clicar num item, todos os espaços contendo esse mesmo item serão destacados.'
+L.Tooltips = 'Dicas de Interface'
 
--- frame
+-- frame options
 L.FrameOptions = 'Janelas'
 L.FrameOptionsDescription = 'Estas são opções específicas para cada janela do %s.'
 
@@ -40,23 +47,31 @@ L.Enabled = 'Ativar'
 L.EnabledTip = 'Se desativado, as janelas padrão do Blizzard não serao substituídas por esta janela.\n\n|cffff1919Necessário recarregar a interface.|r'
 L.ActPanel = 'Agir como Painel Padrão'
 L.ActPanelTip = 'Se ativado, esta janela irá se posicionar automaticamente como os painéis padrão, como o |cffffffffLivro de Feitiços|r ou o |cffffffffLocalizador de Masmorras|r, e não poderá ser movido.'
+If enabled, this panel will automatically position
+itself as the standard ones do, such as the |cffffffffSpellbook|r
+or the |cffffffffDungeon Finder|r, and will not be movable.]]
 
 L.BagToggle = 'Lista de Bolsas'
 L.Broker = 'DataBroker'
+L.Currency = 'Rastreador de Moedas'
+L.Deposit = 'Botão de Depósito'
+L.Sidebar = 'Filtros Laterais' .. NEW
 L.Sort = 'Botão de Limpeza'
 L.Search = 'Botão de Pesquisa'
 L.Options = 'Botão de Configuração'
-L.LeftTabs = 'Separadores à Esquerda'
-L.LeftTabsTip = 'Se ativado, os separadores laterais serão exibidos no lado esquerdo da janela.'
+L.Tabs = 'Filtros Inferiores' .. NEW
 
 L.Appearance = 'Aparência'
 L.Layer = 'Camada'
 L.BagBreak = 'Separação de Bolsas' .. NEW
+L.BreakSpace = 'Espaçamento de Quebra' .. NEW
 L.ByType = 'Por Tipo'
 L.ReverseBags = 'Inverter Ordem das Bolsas'
 L.ReverseSlots = 'Inverter Ordem dos Espaços'
+
 L.Color = 'Cor de Fundo'
 L.BorderColor = 'Cor da Borda'
+
 L.Strata = 'Camada'
 L.Skin = 'Tema'  .. NEW
 L.Columns = 'Colunas'
@@ -65,7 +80,7 @@ L.ItemScale = 'Escala dos Itens'
 L.Spacing = 'Espaçamento'
 L.Alpha = 'Transparência'
 
--- colors
+-- slot options
 L.SlotOptions = 'Espaços'
 L.SlotOptionsDescription = 'Estas configurações permitem alterar como os espaços de itens são apresentados nas janelas do %s para facilitar a sua identificação.'
 
@@ -80,6 +95,7 @@ L.GlowAlpha = 'Intensidade de Brilho'
 L.EmptySlots = 'Exibir Fundo'
 L.SlotBackground = 'Arte'
 L.ColorSlots = 'Colorir por Tipo de Bolsa'
+L.AccountColor = 'Cor do Bando de Guerra'
 L.NormalColor = 'Bolsas Normais'
 L.KeyColor = 'Chaves'
 L.QuiverColor = 'Aljavas'
@@ -97,28 +113,28 @@ L.FridgeColor = 'Refrigeradores'
 
 -- auto display
 L.DisplayOptions = 'Exibição Automática'
-L.DisplayOptionsDesc = 'Essas opções permitem configurar quando a sua mochila se abre ou fecha automaticamente devido a eventos do jogo.'
+L.DisplayOptionsDescription = 'Essas opções permitem configurar quando a sua mochila se abre ou fecha automaticamente devido a eventos do jogo.'
 
 L.DisplayInventory = 'Exibir Mochila'
-L.CloseInventory = 'Fechar Mochila'
-
 L.Auctioneer = 'Na Casa de Leilões'
 L.Banker = 'No Banco'
-L.Combat = 'Ao Entrar em Combate'
 L.Crafting = 'Ao Fabricar'
 L.GuildBanker = 'No Banco da Guilda'
 L.VoidStorageBanker = 'No Cofre'
 L.MailInfo = 'No Correio'
-L.MapFrame = 'Ao Abrir o Mapa'
 L.Merchant = 'Ao Falar com Comerciantes'
-L.PlayerFrame = 'Ao Abrir Informações da Personagem'
-L.ScrappingMachine = 'Ao Destruir Equipamento'
-L.Socketing = 'Ao Inserir Engastes'
+L.Character = 'Ao abrir a janela do personagem'
 L.TradePartner = 'Ao Trocar com Jogadores'
+L.Transmogrifier = 'Ao modificar itens'
+
+L.CloseInventory = 'Fechar Mochila'
+L.MapFrame = 'Ao Abrir o Mapa'
+L.Combat = 'Ao Entrar em Combate'
 L.Vehicle = 'Ao Entrar num Veículo'
 
 -- info
 L.HelpDescription = 'Aqui vai encontrar respostas para as perguntas mais frequentes. Se nenhuma resolver o seu problema, considere pedir ajuda na comunidade de utilizadores do %s no Discord.'
+L.Patrons = 'Patronos'
 L.PatronsDescription = '%s é distribuído gratuitamente e suportado por doações. Um grande agradecimento a todos os fans no Patreon e Paypal que mantêm o desenvolvimento vivo. Também te podes tornar um patron visitando |cFFF96854patreon.com/jaliborc|r.'
 L.AskCommunity = 'Pergunte à Comunidade'
 L.JoinUs = 'Junta-te a Nós'

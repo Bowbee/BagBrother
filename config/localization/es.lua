@@ -4,35 +4,42 @@
 --]]
 
 local CONFIG = ...
-local L = LibStub('AceLocale-3.0'):NewLocale(CONFIG, 'esES') or LibStub('AceLocale-3.0'):NewLocale(CONFIG, 'esMX')
-if not L then return end
 local NEW = BATTLENET_FONT_COLOR:WrapTextInColorCode(' ' .. NEW_CAPS)
+local L = LibStub('AceLocale-3.0'):NewLocale(CONFIG, 'esES')
+if not L then return end
 
--- Spanish
+-- filters
 L.InstalledFilters = 'Filtros instalados'
 L.CustomFilters = 'Filtros personalizados'
 L.NewFilter = 'Nuevo filtro'
 L.NewSearch = 'Nueva búsqueda'
 L.NewMacro = 'Nueva macro'
 L.Import = 'Importar'
+L.EnterSearch = 'Introducir consulta de búsqueda:'
 L.SharePopup = 'Copia estos datos y compártelos:'
 L.ImportPopup = 'Pega los datos para importar:|n|cnERROR_COLOR:(Advertencia: solo importa filtros de fuentes en las que confíes)|r'
 
--- general
+-- automatic. do not translate unless necessary
+L.Help = HELP_LABEL
+L.Money = MONEY
+L.NewFeature = NEW
+
+-- general options
 L.GeneralOptionsDescription = 'Funciones generales que puedes aplicar según tus preferencias.'
 
-L.Locked = 'Bloquear ventanas'
 L.CountItems = 'Contador en tooltips de objetos'
 L.CountGuild = 'Incluir banco de hermandad'
 L.CountCurrency = 'Contador en tooltips de moneda'
-L.FlashFind = 'Búsqueda instantánea'
-L.FlashFindTip = 'Si se activa, al hacer clic con Alt en un objeto, resaltarán todas las ranuras con ese mismo objeto en todas las ventanas.'
-L.DisplayBlizzard = 'Mostrar ventanas de Blizzard para bolsas desactivadas'
-L.DisplayBlizzardTip = 'Si se activa, se mostrará la interfaz por defecto de Blizzard para bolsas ocultas del inventario o del banco.\n\n|cffff1919Requiere recargar la IU.|r'
 L.ConfirmGlobals = '¿Estás seguro de que quieres desactivar la configuración específica para este personaje? Se perderán todos los ajustes guardados.'
 L.CharacterSpecific = 'Ajustes del personaje'
+L.DisplayBlizzard = 'Mostrar ventanas de Blizzard para bolsas desactivadas'
+L.DisplayBlizzardTip = 'Si se activa, se mostrará la interfaz por defecto de Blizzard para bolsas ocultas del inventario o del banco.\n\n|cffff1919Requiere recargar la IU.|r'
+L.Locked = 'Bloquear ventanas'
+L.FlashFind = 'Búsqueda instantánea'
+L.FlashFindTip = 'Si se activa, al hacer clic con Alt en un objeto, resaltarán todas las ranuras con ese mismo objeto en todas las ventanas.'
+L.Tooltips = 'Descripciones emergentes'
 
--- frame
+-- frame options
 L.FrameOptions = 'Opciones de ventana'
 L.FrameOptionsDescription = 'Estos son ajustes específicos para la ventana %s.'
 
@@ -44,21 +51,24 @@ L.ActPanelTip = [[
 Si está activado, este panel se posicionará automáticamente
 a sí mismo igual que los paneles estándar, como el |cffffffffLibro de hechizos|r
 o el |cffffffffBuscador de mazmorras|r, y no se podrá mover.]]
+If enabled, this panel will automatically position
+itself as the standard ones do, such as the |cffffffffSpellbook|r
+or the |cffffffffDungeon Finder|r, and will not be movable.]]
 
 L.BagToggle = 'Mostrar bolsas'
 L.Broker = 'Plugins del Databroker'
+L.Currency = 'Seguimiento de monedas'
+L.Deposit = 'Botón de depósito'
+L.Sidebar = 'Filtros laterales' .. NEW
 L.Sort = 'Botón para ordenar'
 L.Search = 'Botón para buscar'
 L.Options = 'Botón para opciones'
-L.Reagents = 'Botón para componentes'
-L.LeftTabs = 'Pestañas a la izquierda'
-L.LeftTabsTip = [[
-Si está activado, las pestañas laterales
-se mostrarán en el lado izquierdo del panel.]]
+L.Tabs = 'Filtros inferiores' .. NEW
 
 L.Appearance = 'Apariencia'
 L.Layer = 'Capa'
 L.BagBreak = 'Espaciado entre bolsas' .. NEW
+L.BreakSpace = 'Espaciado de salto' .. NEW
 L.ByType = 'Por tipo'
 L.ReverseBags = 'Invertir bolsas'
 L.ReverseSlots = 'Invertir ranuras'
@@ -74,7 +84,7 @@ L.ItemScale = 'Escala de objeto'
 L.Spacing = 'Espaciado'
 L.Alpha = 'Opacidad'
 
--- slots
+-- slot options
 L.SlotOptions = 'Opciones de ranuras'
 L.SlotOptionsDescription = 'Estas opciones te permiten cambiar cómo se presentan las ranuras de objetos en los marcos de %s para una identificación más fácil.'
 
@@ -89,6 +99,7 @@ L.GlowAlpha = 'Brillo del resplandor'
 L.EmptySlots = 'Mostrar fondo'
 L.SlotBackground = 'Arte'
 L.ColorSlots = 'Color por tipo de bolsa'
+L.AccountColor = 'Color de banda de guerra'
 L.NormalColor = 'Color normal'
 L.KeyColor = 'Color de llavero'
 L.QuiverColor = 'Color de carcaj'
@@ -109,26 +120,21 @@ L.DisplayOptions = 'Opciones para mostrar'
 L.DisplayOptionsDescription = 'Estas opciones te permiten ajustar cuándo se abre o cierra automáticamente tu inventario debido a eventos del juego.'
 
 L.DisplayInventory = 'Mostrar inventario'
-L.CloseInventory = 'Cerrar inventario'
-
 L.Auctioneer = 'Al visitar la casa de subastas'
 L.Banker = 'Al visitar el banco'
-L.Combat = 'Al entrar en combate'
 L.Crafting = 'Al abrir una ventana de profesión'
 L.GuildBanker = 'Al abrir el banco de hermandad'
 L.VoidStorageBanker = 'Al visitar el depósito del vacío'
 L.MailInfo = 'Al abrir el buzón'
-L.MapFrame = 'Al abrir el mapa del mundo'
 L.Merchant = 'Al salir de un vendedor'
-L.PlayerFrame = 'Al abrir la información del personaje'
-L.ScrappingMachine = 'Al reciclar equipo'
-L.Socketing = 'Al insertar gemas'
+L.Character = 'Al abrir la información del personaje'
 L.TradePartner = 'Al comerciar'
-L.Vehicle = 'Al entrar en un vehículo'
+L.Transmogrifier = 'Al modificar objetos'
 
--- rulesets
-L.RuleOptions = 'Reglas de objetos'
-L.RuleOptionsDescription = 'Estos ajustes permiten establecer qué reglas se aplican y en qué orden.'
+L.CloseInventory = 'Cerrar inventario'
+L.MapFrame = 'Al abrir el mapa del mundo'
+L.Combat = 'Al entrar en combate'
+L.Vehicle = 'Al entrar en un vehículo'
 
 -- info
 L.HelpDescription = 'Aquí proporcionamos respuestas a las preguntas más frecuentes. Si ninguna resuelve tu problema, podrías considerar pedir ayuda en la comunidad de usuarios de %s en Discord.'

@@ -4,45 +4,71 @@
 --]]
 
 local CONFIG = ...
+local NEW = BATTLENET_FONT_COLOR:WrapTextInColorCode(' ' .. NEW_CAPS)
 local L = LibStub('AceLocale-3.0'):NewLocale(CONFIG, 'deDE')
 if not L then return end
-local NEW = BATTLENET_FONT_COLOR:WrapTextInColorCode(' ' .. NEW_CAPS)
 
--- German
+-- filters
 L.InstalledFilters = 'Installierte Filter'
 L.CustomFilters = 'Benutzerdefinierte Filter'
 L.NewFilter = 'Neuer Filter'
 L.NewSearch = 'Neue Suche'
 L.NewMacro = 'Neues Makro'
 L.Import = 'Importieren'
+L.EnterSearch = 'Suchanfrage eingeben:'
 L.SharePopup = 'Diese Daten kopieren und teilen:'
 L.ImportPopup = 'Daten zum Import einfügen:|n|cnERROR_COLOR:(Warnung – importiere nur Filter aus vertrauenswürdigen Quellen)|r'
 
--- general
-L.GeneralOptionsDesc = 'Allgemeine Einstellungen für %s anpassen'
-L.Locked = 'Fensterpositionen sperren'
-L.CountItems = 'Ermögliche tooltip item count'
-L.FlashFind = 'Ermögliche Blitzsuche'
-L.EmptySlots = 'Zeige einen Hintergrund für leere Gegenstandslots'
-L.DisplayBlizzard = 'Blizzard Fenster für die deaktivierten Taschen anzeigen'
+-- automatic. do not translate unless necessary
+L.Help = HELP_LABEL
+L.Money = MONEY
+L.NewFeature = NEW
 
--- frame
+-- general options
+L.GeneralOptionsDescription = 'Allgemeine Einstellungen für %s anpassen'
+
+L.CountItems = 'Ermögliche tooltip item count'
+L.CountGuild = 'Include Guild Banks'
+L.CountCurrency = 'Währung tooltip count'
+L.ConfirmGlobals = 'Möchtest du die spezifischen Einstellungen für diesen Charakter wirklich deaktivieren? Alle spezifischen Einstellungen gehen verloren.'
+L.CharacterSpecific = 'Charakterspezifische Einstellungen'
+L.DisplayBlizzard = 'Blizzard Fenster für die deaktivierten Taschen anzeigen'
+L.DisplayBlizzardTip = 'Wenn aktiviert, werden die Standard-Blizzard-Taschenfenster für ausgeblendete Taschen angezeigt.\n\n|cffff1919Benötigt ggf. ein Neuladen des Interfaces.|r'
+L.Locked = 'Fensterpositionen sperren'
+L.FlashFind = 'Ermögliche Blitzsuche'
+L.FlashFindTip = 'Wenn aktiviert, hebt das Klicken mit Alt auf einen Gegenstand alle Taschenplätze mit diesem Gegenstand hervor.'
+L.Tooltips = 'Tooltips'
+
+-- frame options
 L.FrameOptions = 'Fenstereinstellungen'
-L.FrameOptionsDesc = 'Einstellungen für ein bestimmtes %s Fenster anpassen'
+L.FrameOptionsDescription = 'Einstellungen für ein bestimmtes %s Fenster anpassen'
+
 L.Frame = 'Fenster'
 L.Enabled = 'Aktiviert'
-L.CharacterSpecific = 'Charakterspezifische Einstellungen'
-L.ExclusiveReagent = 'Getrenntes Materiallager'
+L.EnabledTip = 'Wenn deaktiviert, wird das Standard-Interface für dieses Fenster nicht ersetzt.\n\n|cffff1919Benötigt ggf. ein Neuladen des Interfaces.|r'
+L.ActPanel = 'Standardfenster Verhalten'
+L.ActPanelTip = [[If enabled, this panel will automatically position
+itself as the standard ones do, such as the |cffffffffSpellbook|r
+or the |cffffffffDungeon Finder|r, and will not be movable.]]
+If enabled, this panel will automatically position
+itself as the standard ones do, such as the |cffffffffSpellbook|r
+or the |cffffffffDungeon Finder|r, and will not be movable.]]
 
 L.BagToggle = 'Taschenschaltflächen'
 L.Broker = 'Databroker'
+L.Currency = 'Währungstracker'
+L.Deposit = 'Einzahlungsschaltfläche'
+L.Sidebar = 'Seitenfilter' .. NEW
 L.Sort = 'Sortierschaltfläche'
 L.Search = 'Suchsschaltfläche'
 L.Options = 'Optionenschaltfläche'
+L.Tabs = 'Untere Filter' .. NEW
 
 L.Appearance = 'Erscheinung'
 L.Layer = 'Ebene'
 L.BagBreak = 'Trennen der Taschen aktivieren' .. NEW
+L.BreakSpace = 'Zeilenabstand' .. NEW
+L.ByType = 'Nach Typ'
 L.ReverseBags = 'Taschen umkehren'
 L.ReverseSlots = 'Slots umkehren'
 
@@ -50,42 +76,34 @@ L.Color = 'Farbe des Fensters'
 L.BorderColor = 'Farbe des Fensterrands'
 
 L.Strata = 'Ebene'
+L.Skin = 'Skin' .. NEW
 L.Columns = 'Spalten'
 L.Scale = 'Skalierung'
 L.ItemScale = 'Gegenstandsskalierung'
 L.Spacing = 'Abstand'
 L.Alpha = 'Transparenz'
 
--- auto display
-L.DisplayOptions = 'Automatische Anzeige'
-L.DisplayOptionsDesc = 'Einstellungen für das automatische öffnen der Fenster'
-L.DisplayInventory = 'Inventar anzeigen...'
-L.CloseInventory = 'Inventar schließen...'
-
-L.Banker = 'beim Öffnen der Bank'
-L.Auctioneer = 'beim Öffnen des Auktionshauses'
-L.TradePartner = 'beim Handel von Gegenständen'
-L.Crafting = 'beim Herstellen'
-L.MailInfo = 'beim Abholen der Post'
-L.GuildBanker = 'beim Öffnen der Gildenbank'
-L.PlayerFrame = 'beim Öffnen des Spielerfensters'
-L.Socketing = 'beim Gesockeln eines Gegenstands'
-L.Combat = 'beim Kampfbeginn'
-L.Vehicle = 'beim Eintritt in ein Fahrzeugs'
-L.Merchant = 'beim Verlassen des Handlers'
-
--- colors
-L.ColorOptions = 'Farbeinstellungen'
-L.ColorOptionsDesc = 'Einstellungen für das Einfärben der Gegenstandslots'
+-- slot options
+L.SlotOptions = 'Farbeinstellungen'
+L.SlotOptionsDescription = 'Einstellungen für das Einfärben der Gegenstandslots'
 
 L.GlowQuality = 'Gegenstände nach der Seltenheit hervorheben'
-L.GlowNew = 'Neue Gegenstände hervorheben'
 L.GlowQuest = 'Questgegenstände hervorheben'
 L.GlowUnusable = 'Unbrauchbare Gegenstände hervorheben'
 L.GlowSets = 'Ausrüstungsset-Gegenstände hervorheben'
-L.ColorSlots = 'Leere Gegenstandslots nach der Taschen-Art einfärben'
+L.GlowNew = 'Neue Gegenstände hervorheben'
+L.GlowPoor = 'Qualitätsfärbung für graue Gegenstände'
+L.GlowAlpha = 'Helligkeit der Gegenstandshervorhebung'
 
+L.EmptySlots = 'Zeige einen Hintergrund für leere Gegenstandslots'
+L.SlotBackground = 'Hintergrundgrafik'
+L.ColorSlots = 'Leere Gegenstandslots nach der Taschen-Art einfärben'
+L.AccountColor = 'Kriegsmeutenfarbe'
 L.NormalColor = 'Universaltasche'
+L.KeyColor = 'Schlüsselbundfarbe'
+L.QuiverColor = 'Munitionsfarbe'
+L.SoulColor = 'Seelentasche Farbe'
+L.ReagentColor = 'Materiallager'
 L.LeatherColor = 'Lederertasche'
 L.InscribeColor = 'Schreibertasche'
 L.HerbColor = 'Kräutertasche'
@@ -94,9 +112,28 @@ L.EngineerColor = 'Ingnieurstasche'
 L.GemColor = 'Edelsteintasche'
 L.MineColor = 'Bergbautasche'
 L.TackleColor = 'Anglertasche'
-L.RefrigeColor = 'Küchentasche'
-L.ReagentColor = 'Materiallager'
-L.GlowAlpha = 'Helligkeit der Gegenstandshervorhebung'
+L.FridgeColor = 'Küchentasche'
+
+-- auto display
+L.DisplayOptions = 'Automatische Anzeige'
+L.DisplayOptionsDescription = 'Einstellungen für das automatische öffnen der Fenster'
+
+L.DisplayInventory = 'Inventar anzeigen...'
+L.Auctioneer = 'beim Öffnen des Auktionshauses'
+L.Banker = 'beim Öffnen der Bank'
+L.Crafting = 'beim Herstellen'
+L.GuildBanker = 'beim Öffnen der Gildenbank'
+L.VoidStorageBanker = 'Beim Leerenlager'
+L.MailInfo = 'beim Abholen der Post'
+L.Merchant = 'beim Verlassen des Handlers'
+L.Character = 'beim Öffnen der Charakterinfo'
+L.TradePartner = 'beim Handel von Gegenständen'
+L.Transmogrifier = 'beim Ändern von Gegenständen'
+
+L.CloseInventory = 'Inventar schließen...'
+L.MapFrame = 'beim Öffnen der Weltkarte'
+L.Combat = 'beim Kampfbeginn'
+L.Vehicle = 'beim Eintritt in ein Fahrzeugs'
 
 -- info
 L.HelpDescription = 'Hier findest du Antworten auf die am häufigsten gestellten Fragen. Wenn keine davon dein Problem löst, kannst du in der %s-Community auf Discord um Hilfe bitten.'

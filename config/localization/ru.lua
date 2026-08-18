@@ -3,9 +3,9 @@
 --]]
 
 local CONFIG = ...
+local NEW = BATTLENET_FONT_COLOR:WrapTextInColorCode(' ' .. NEW_CAPS)
 local L = LibStub('AceLocale-3.0'):NewLocale(CONFIG, 'ruRU')
 if not L then return end
-local NEW = BATTLENET_FONT_COLOR:WrapTextInColorCode(' ' .. NEW_CAPS)
 
 -- filters
 L.InstalledFilters = 'Установленные фильтры'
@@ -14,24 +14,34 @@ L.NewFilter = 'Новый фильтр'
 L.NewSearch = 'Новый поиск'
 L.NewMacro = 'Новая макрос'
 L.Import = 'Импорт'
+L.EnterSearch = 'Введите поисковый запрос:'
 L.SharePopup = 'Скопируйте эти данные и поделитесь:'
 L.ImportPopup = 'Вставьте данные для импорта:|n|cnERROR_COLOR:(Предупреждение — импортируйте фильтры только из доверенных источников)|r'
 
--- general options
-L.GeneralOptionsDesc = 'Общие функции, которые вы можете настроить в соответствии со своими предпочтениями.'
+-- automatic. do not translate unless necessary
+L.Help = HELP_LABEL
+L.Money = MONEY
+L.NewFeature = NEW
 
-L.Locked = 'Закрепить окна'
+-- general options
+L.GeneralOptionsDescription = 'Общие функции, которые вы можете настроить в соответствии со своими предпочтениями.'
+
 L.CountItems = 'Показывать в подсказках количество предметов'
 L.CountGuild = 'Учитывать банк гильдии'
-L.FlashFind = 'Включить мгновенный поиск'
-L.DisplayBlizzard = 'Использовать стандартные окна для скрытых сумок'
-L.DisplayBlizzardTip = 'Если настройка включена, скрытые сумки инвентаря или банка будут использовать стандартный интерфейс Blizzard.\n\n|cffff1919Потребуется перезагрузка интерфейса.|r'
+L.CountCurrency = 'Показывать количество валюты в подсказках'
 L.ConfirmGlobals = 'Уверены, что хотите отключить использование индивидуальных настроек для этого персонажа? Все индивидуальные настройки будут потеряны.'
 L.CharacterSpecific = 'Использовать отдельные настройки для текущего персонажа'
+L.DisplayBlizzard = 'Использовать стандартные окна для скрытых сумок'
+L.DisplayBlizzardTip = 'Если настройка включена, скрытые сумки инвентаря или банка будут использовать стандартный интерфейс Blizzard.\n\n|cffff1919Потребуется перезагрузка интерфейса.|r'
+L.Locked = 'Закрепить окна'
+L.FlashFind = 'Включить мгновенный поиск'
+L.FlashFindTip = 'Если настройка включена, при нажатии Alt + левой кнопкой мыши на предмет будут подсвечены все ячейки с таким же предметом во всех окнах.'
+L.Tooltips = 'Подсказки'
 
--- frame
+-- frame options
 L.FrameOptions = 'Настройки окна'
-L.FrameOptionsDesc = 'Настройки окон %s.'
+L.FrameOptionsDescription = 'Настройки окон %s.'
+
 L.Frame = 'Окно'
 L.Enabled = 'Включить окно'
 L.EnabledTip = 'Если настройка отключена, Bagnon не станет заменять это стандартное окно Blizzard своим собственным.\n\n|cffff1919Потребуется перезагрузка интерфейса.|r'
@@ -39,21 +49,25 @@ L.ActPanel = 'Поведение, как у стандартных панеле�
 L.ActPanelTip = [[
 Если настройка включена, эта панель будет вести себя, как стандартные панели (например, |cffffffffКнига заклинаний|r
 или |cffffffffПоиск подземелий|r), и станет неподвижной.]]
+If enabled, this panel will automatically position
+itself as the standard ones do, such as the |cffffffffSpellbook|r
+or the |cffffffffDungeon Finder|r, and will not be movable.]]
 
 L.BagToggle = 'Кнопка сумок'
 L.Broker = 'DataBroker'
 L.Currency = 'Валюта'
-L.ExclusiveReagent = 'Банк материалов отдельно'
+L.Deposit = 'Кнопка вклада'
+L.Sidebar = 'Боковые фильтры' .. NEW
 L.Sort = 'Кнопка сортировки'
 L.Search = 'Кнопка поиска'
 L.Options = 'Кнопка настроек'
-L.LeftTabs = 'Категории слева'
-L.LeftTabsTip = [[
-Если настройка включена, боковые вкладки будут размещены слева от окна.]]
+L.Tabs = 'Нижние фильтры' .. NEW
 
 L.Appearance = 'Внешний вид'
 L.Layer = 'Слой'
 L.BagBreak = 'Каждая сумка с новой строки' .. NEW
+L.BreakSpace = 'Интервал переноса' .. NEW
+L.ByType = 'По типу'
 L.ReverseBags = 'Обратный порядок сумок'
 L.ReverseSlots = 'Обратный порядок ячеек'
 
@@ -61,36 +75,16 @@ L.Color = 'Цвет фона окна'
 L.BorderColor = 'Цвет границы окна'
 
 L.Strata = 'Слой окна'
+L.Skin = 'Оформление' .. NEW
 L.Columns = 'Столбцы'
 L.Scale = 'Масштаб'
 L.ItemScale = 'Масштаб предметов'
 L.Spacing = 'Промежуток'
 L.Alpha = 'Прозрачность'
 
--- auto display
-L.DisplayOptions = 'Автопоявление'
-L.DisplayOptionsDesc = 'Эти настройки позволяют автоматически открывать или закрывать окно инвентаря в зависимости от игровых событий.'
-L.DisplayInventory = 'Открывать сумки'
-L.CloseInventory = 'Закрывать сумки'
-
-L.Auctioneer = 'При посещении аукциона'
-L.Banker = 'При посещении банка'
-L.Combat = 'При начале боя'
-L.Crafting = 'При изготовлении предметов'
-L.GuildBanker = 'При посещении банка гильдии'
-L.VoidStorageBanker = 'При посещении Хранилища Бездны'
-L.MailInfo = 'При проверке почты'
-L.MapFrame = 'При открытии карты мира'
-L.Merchant = 'При закрытии окна торговца'
-L.PlayerFrame = 'При открытии окна персонажа'
-L.ScrappingMachine = 'При утилизации экипировки'
-L.Socketing = 'При вставке камней в предметы'
-L.TradePartner = 'При обмене предметами'
-L.Vehicle = 'При посадке на средство передвижения'
-
--- colors
-L.ColorOptions = 'Настройки окраски'
-L.ColorOptionsDesc = 'Эти настройки позволяют изменять цвет ячеек в %s для облегчения идентификации предметов.'
+-- slot options
+L.SlotOptions = 'Настройки окраски'
+L.SlotOptionsDescription = 'Эти настройки позволяют изменять цвет ячеек в %s для облегчения идентификации предметов.'
 
 L.GlowQuality = 'Цвет рамок зависит от качества'
 L.GlowQuest = 'Выделять цветом квестовые'
@@ -101,7 +95,9 @@ L.GlowPoor = 'Помечать барахло'
 L.GlowAlpha = 'Яркость подсветки'
 
 L.EmptySlots = 'Показывать фон'
+L.SlotBackground = 'Текстура ячеек'
 L.ColorSlots = 'Цвет фона зависит от сумки'
+L.AccountColor = 'Цвет отряда'
 L.NormalColor = 'Обычная сумка'
 L.KeyColor = 'Ключница'
 L.QuiverColor = 'Колчан'
@@ -116,6 +112,27 @@ L.GemColor = 'Сумка ювелира'
 L.MineColor = 'Сумка горняка'
 L.TackleColor = 'Сумка рыбака'
 L.FridgeColor = 'Сумка кулинара'
+
+-- auto display
+L.DisplayOptions = 'Автопоявление'
+L.DisplayOptionsDescription = 'Эти настройки позволяют автоматически открывать или закрывать окно инвентаря в зависимости от игровых событий.'
+
+L.DisplayInventory = 'Открывать сумки'
+L.Auctioneer = 'При посещении аукциона'
+L.Banker = 'При посещении банка'
+L.Crafting = 'При изготовлении предметов'
+L.GuildBanker = 'При посещении банка гильдии'
+L.VoidStorageBanker = 'При посещении Хранилища Бездны'
+L.MailInfo = 'При проверке почты'
+L.Merchant = 'При закрытии окна торговца'
+L.Character = 'При открытии окна персонажа'
+L.TradePartner = 'При обмене предметами'
+L.Transmogrifier = 'При изменении предметов'
+
+L.CloseInventory = 'Закрывать сумки'
+L.MapFrame = 'При открытии карты мира'
+L.Combat = 'При начале боя'
+L.Vehicle = 'При посадке на средство передвижения'
 
 -- info
 L.HelpDescription = 'Здесь вы найдете ответы на наиболее часто задаваемые вопросы. Если это не решит вашу проблему, попробуйте обратиться за помощью к сообществу %s на Discord.'

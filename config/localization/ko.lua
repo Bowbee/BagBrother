@@ -3,59 +3,72 @@
 --]]
 
 local CONFIG = ...
+local NEW = BATTLENET_FONT_COLOR:WrapTextInColorCode(' ' .. NEW_CAPS)
 local L = LibStub('AceLocale-3.0'):NewLocale(CONFIG, 'koKR')
 if not L then return end
-local NEW = BATTLENET_FONT_COLOR:WrapTextInColorCode(' ' .. NEW_CAPS)
 
--- import
+-- filters
 L.InstalledFilters = '설치된 필터'
 L.CustomFilters = '사용자 필터'
 L.NewFilter = '새 필터'
 L.NewSearch = '새 검색'
 L.NewMacro = '새 매크로'
 L.Import = '가져오기'
+L.EnterSearch = '검색어 입력:'
 L.SharePopup = '이 데이터를 복사하여 공유하세요:'
 L.ImportPopup = '가져올 데이터를 붙여넣으세요:|n|cnERROR_COLOR:(경고 - 신뢰할 수 있는 출처의 필터만 가져오세요)|r'
 
--- general options
-L.GeneralOptionsDesc = '환경 설정에 따라 설정을 전환 할 수 있는 일반적인 기능입니다.'
+-- automatic. do not translate unless necessary
+L.Help = HELP_LABEL
+L.Money = MONEY
+L.NewFeature = NEW
 
-L.Locked = '창 위치 잠금'
+-- general options
+L.GeneralOptionsDescription = '환경 설정에 따라 설정을 전환 할 수 있는 일반적인 기능입니다.'
+
 L.CountItems = '아이템 갯수를 툴팁에 표시'
 L.CountGuild = '길드 금고 포함'
-L.FlashFind = '빠른 찾기 사용'
-L.DisplayBlizzard = '숨은 가방 대비책'
-L.DisplayBlizzardTip = '만약 활성화하면 숨긴 가방 또는 은행 저장소에 대해 기본 블리자드 UI 가방 창이 표시됩니다.\n\n|cffff1919UI 리로드가 필요합니다.|r'
+L.CountCurrency = '화폐 툴팁 표시'
 L.ConfirmGlobals = '이 캐릭터에 대한 개별 설정을 비활성화 하시겠습니까? 모든 개별 설정을 잃게됩니다.'
 L.CharacterSpecific = '캐릭터 개별 설정'
+L.DisplayBlizzard = '숨은 가방 대비책'
+L.DisplayBlizzardTip = '만약 활성화하면 숨긴 가방 또는 은행 저장소에 대해 기본 블리자드 UI 가방 창이 표시됩니다.\n\n|cffff1919UI 리로드가 필요합니다.|r'
+L.Locked = '창 위치 잠금'
+L.FlashFind = '빠른 찾기 사용'
+L.FlashFindTip = '활성화 시, 아이템을 Alt+클릭하면 모든 프레임에서 동일한 아이템이 있는 모든 슬롯이 반짝입니다.'
+L.Tooltips = '툴팁'
 
 -- frame options
 L.FrameOptions = '창 설정'
-L.FrameOptionsDesc = '애드온 창에 특화된 설정'
+L.FrameOptionsDescription = '애드온 창에 특화된 설정'
 
 L.Frame = '창'
 L.Enabled = '애드온 사용'
-L.CharacterSpecific = '캐릭터 개별 설정'
+L.EnabledTip = '비활성화 시, 이 프레임에 대해 기본 Blizzard UI가 대체되지 않습니다.\n\n|cffff1919UI 재로드가 필요할 수 있습니다.|r'
 L.ActPanel = '표준 패널로 작동'
 L.ActPanelTip = [[
 활성화되면 이 패널은 |cffffffff마법책|r이나
 |cffffffff던젼 찾기|r와 같은 표준 패널과 같이
 자동으로 배치되며 움직일 수 없습니다.]]
+If enabled, this panel will automatically position
+itself as the standard ones do, such as the |cffffffffSpellbook|r
+or the |cffffffffDungeon Finder|r, and will not be movable.]]
 
 L.BagToggle = '가방 표시'
 L.Broker = 'Databroker 플러그인 표시'
+L.Currency = '화폐 추적기'
+L.Deposit = '입금 버튼'
+L.Sidebar = '측면 필터' .. NEW
 L.Sort = '정리 버튼 표시'
 L.Search = '검색 버튼 표시'
 L.Options = '설정 버튼 표시'
-L.ExclusiveReagent = '재료 은행 별도 표시'
-L.LeftTabs = '좌측에 규칙 표시'
-L.LeftTabsTip = [[
-활성화되면 측면의 탭이
-패널의 좌측에 표시됩니다.]]
+L.Tabs = '하단 필터' .. NEW
 
 L.Appearance = '모양'
 L.Layer = '레이어'
 L.BagBreak = '가방 별로 구분하여 표시' .. NEW
+L.BreakSpace = '줄 바꿈 간격' .. NEW
+L.ByType = '종류별'
 L.ReverseBags = '가방 순서 반대로'
 L.ReverseSlots = '칸 순서 반대로'
 
@@ -63,36 +76,16 @@ L.Color = '배경 색상'
 L.BorderColor = '테두리 색상'
 
 L.Strata = '프레임 레이어'
+L.Skin = '스킨' .. NEW
 L.Columns = '칸 수'
 L.Scale = '크기 비율'
 L.ItemScale = '아이템 크기 비율'
 L.Spacing = '간격'
 L.Alpha = '투명도'
 
--- auto display
-L.DisplayOptions = '자동 표시'
-L.DisplayOptionsDesc = '이 설정은 게임 이벤트에 따라 가방을 자동으로 열거나 닫게 해줍니다.'
-L.DisplayInventory = '가방 표시'
-L.CloseInventory = '가방 닫기'
-
-L.Banker = '은행 창 열 때 가방 열기'
-L.GuildBanker = '길드 은행 열 때 가방 열기'
-L.Auctioneer = '경매 창 열 때 가방 열기'
-L.MailInfo = '우편함 열 때 가방 열기'
-L.TradePartner = '거래 시 가방 열기'
-L.ScrappingMachine = '장비 폐기시 가방 열기'
-L.Socketing = '보석 장착시 가방 열기'
-L.Crafting = '제작 시 가방 열기'
-L.PlayerFrame = '캐릭터 창 열 때 가방 열기'
-L.Merchant = '상인을 떠날 때 가방 닫기'
-
-L.Combat = '전투 시 가방 닫기'
-L.Vehicle = '차량 탑승 시 가방 닫기'
-L.MapFrame = '지도를 열 때 가방 닫기'
-
--- colors
-L.ColorOptions = '색상 설정'
-L.ColorOptionsDesc = '이 설정은 아이템의 변화 상황을 쉽게 구분할 수 있도록 표시합니다.'
+-- slot options
+L.SlotOptions = '색상 설정'
+L.SlotOptionsDescription = '이 설정은 아이템의 변화 상황을 쉽게 구분할 수 있도록 표시합니다.'
 
 L.GlowQuality = '품질에 따라 아이템 강조'
 L.GlowQuest = '퀘스트 아이템 강조'
@@ -103,7 +96,9 @@ L.GlowPoor = '잡템 표식 사용'
 L.GlowAlpha = '강조 색상 밝기'
 
 L.EmptySlots = '빈 칸 배경 표시'
+L.SlotBackground = '배경 아트워크'
 L.ColorSlots = '가방 종류에 따라 빈 칸 색상 표시'
+L.AccountColor = '전투부대 색상'
 L.NormalColor = '일반 칸 색상'
 L.KeyColor = '열쇠 칸 색상'
 L.QuiverColor = '화살통/탄환주머니 색상'
@@ -118,6 +113,27 @@ L.GemColor = '보석 가방 칸 색상'
 L.MineColor = '채광 자루 칸 색상'
 L.TackleColor = '낚시상자 칸 색상'
 L.FridgeColor = '요리 칸 색상'
+
+-- auto display
+L.DisplayOptions = '자동 표시'
+L.DisplayOptionsDescription = '이 설정은 게임 이벤트에 따라 가방을 자동으로 열거나 닫게 해줍니다.'
+
+L.DisplayInventory = '가방 표시'
+L.Auctioneer = '경매 창 열 때 가방 열기'
+L.Banker = '은행 창 열 때 가방 열기'
+L.Crafting = '제작 시 가방 열기'
+L.GuildBanker = '길드 은행 열 때 가방 열기'
+L.VoidStorageBanker = '공허 보관사 이용 시'
+L.MailInfo = '우편함 열 때 가방 열기'
+L.Merchant = '상인을 떠날 때 가방 닫기'
+L.Character = '캐릭터 창 열 때'
+L.TradePartner = '거래 시 가방 열기'
+L.Transmogrifier = '아이템 변형시'
+
+L.CloseInventory = '가방 닫기'
+L.MapFrame = '지도를 열 때 가방 닫기'
+L.Combat = '전투 시 가방 닫기'
+L.Vehicle = '차량 탑승 시 가방 닫기'
 
 -- info
 L.HelpDescription = '여기에서는 가장 자주 묻는 질문에 대한 답변을 제공합니다. 해결되지 않으면 Discord의 %s 사용자 커뮤니티에 도움을 요청해 보세요.'
