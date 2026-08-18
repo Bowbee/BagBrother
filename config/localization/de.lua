@@ -47,9 +47,7 @@ L.Frame = 'Fenster'
 L.Enabled = 'Aktiviert'
 L.EnabledTip = 'Wenn deaktiviert, wird das Standard-Interface für dieses Fenster nicht ersetzt.\n\n|cffff1919Benötigt ggf. ein Neuladen des Interfaces.|r'
 L.ActPanel = 'Standardfenster Verhalten'
-L.ActPanelTip = [[If enabled, this panel will automatically position
-itself as the standard ones do, such as the |cffffffffSpellbook|r
-or the |cffffffffDungeon Finder|r, and will not be movable.]]
+L.ActPanelTip = [[
 If enabled, this panel will automatically position
 itself as the standard ones do, such as the |cffffffffSpellbook|r
 or the |cffffffffDungeon Finder|r, and will not be movable.]]

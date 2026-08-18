@@ -51,9 +51,6 @@ L.ActPanelTip = [[
 如启用，此面板将自动定位
 像标准的一样，如同 |cffffffff法术书|r
 或 |cffffffff团队查找器|r，并不能被移动。]]
-If enabled, this panel will automatically position
-itself as the standard ones do, such as the |cffffffffSpellbook|r
-or the |cffffffffDungeon Finder|r, and will not be movable.]]
 
 L.BagToggle = '背包切换'
 L.Broker = 'Databroker 插件'

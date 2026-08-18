@@ -50,9 +50,6 @@ L.ActPanelTip = [[
 활성화되면 이 패널은 |cffffffff마법책|r이나
 |cffffffff던젼 찾기|r와 같은 표준 패널과 같이
 자동으로 배치되며 움직일 수 없습니다.]]
-If enabled, this panel will automatically position
-itself as the standard ones do, such as the |cffffffffSpellbook|r
-or the |cffffffffDungeon Finder|r, and will not be movable.]]
 
 L.BagToggle = '가방 표시'
 L.Broker = 'Databroker 플러그인 표시'

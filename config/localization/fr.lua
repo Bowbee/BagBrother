@@ -51,9 +51,6 @@ Si activé, ce panneau se positionnera
 automatiquement comme les panneaux standards
 le font, tels que le |cffffffffGrimoire|r ou la |cffffffffRecherche de groupe|r,
 et ne pourra pas être déplacé.]]
-If enabled, this panel will automatically position
-itself as the standard ones do, such as the |cffffffffSpellbook|r
-or the |cffffffffDungeon Finder|r, and will not be movable.]]
 
 L.BagToggle = 'Fenêtre du sac'
 L.Broker = 'Activer le DataBroker'

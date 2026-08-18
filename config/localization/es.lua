@@ -51,9 +51,6 @@ L.ActPanelTip = [[
 Si está activado, este panel se posicionará automáticamente
 a sí mismo igual que los paneles estándar, como el |cffffffffLibro de hechizos|r
 o el |cffffffffBuscador de mazmorras|r, y no se podrá mover.]]
-If enabled, this panel will automatically position
-itself as the standard ones do, such as the |cffffffffSpellbook|r
-or the |cffffffffDungeon Finder|r, and will not be movable.]]
 
 L.BagToggle = 'Mostrar bolsas'
 L.Broker = 'Plugins del Databroker'

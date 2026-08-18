@@ -66,6 +66,6 @@ L.ConfirmDelete = 'Sei sicuro di voler eliminare i dati di %s presenti nella cac
 L.ConfirmTransfer = 'Depositare qualsiasi oggetto rimuoverà qualsiasi modifica e/o incantamento e lo renderà non scambiabile e non rimborsabile.|n|nVuoi continuare?'
 L.CannotPurchaseVault = 'Non hai abbastasnza soldi per sbloccare il servizio di Banca Eterea|n|n|cffff2020Costo: %s|r'
 L.PurchaseVault = 'Vuoi sbloccare il servizio di Banca Eterea?|n|n|cffffd200Costo:|r %s'
-L.ConfigurationMode = 'Sei ora nella modalità di configurazione dell'ordinamento lato client.|n|nClicca sugli slot degli oggetti per decidere se bloccarli durante il riordinamento.'
+L.ConfigurationMode = 'Sei ora nella modalità di configurazione dell\'ordinamento lato client.|n|nClicca sugli slot degli oggetti per decidere se bloccarli durante il riordinamento.'
 L.OutOfDate = 'La tua copia di |cffffd200%s|r potrebbe essere obsoleta!|n%s ha riferito di avere la |cff82c5ff%s|r, si prega di aggiornare se è vero.'
 L.InvalidVersion = 'La tua copia di |cffffd200%s|r è corrotta o illegale.|nSi prega di scaricare una versione ufficiale gratuita.'

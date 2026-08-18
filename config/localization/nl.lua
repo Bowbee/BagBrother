@@ -50,9 +50,6 @@ L.ActPanelTip = [[
 Indien ingeschakeld, zal dit paneel automatisch positioneren
 zoals de standaard doen, zoals het |cffffffffSpreukenboek|r
 of de |cffffffffDungeon Finder|r, en zal niet verplaatsbaar zijn.]]
-If enabled, this panel will automatically position
-itself as the standard ones do, such as the |cffffffffSpellbook|r
-or the |cffffffffDungeon Finder|r, and will not be movable.]]
 
 L.BagToggle = 'Tas Wisselen'
 L.Broker = 'Databroker Carrousel'

@@ -49,9 +49,6 @@ L.ActPanel = 'Поведение, как у стандартных панеле�
 L.ActPanelTip = [[
 Если настройка включена, эта панель будет вести себя, как стандартные панели (например, |cffffffffКнига заклинаний|r
 или |cffffffffПоиск подземелий|r), и станет неподвижной.]]
-If enabled, this panel will automatically position
-itself as the standard ones do, such as the |cffffffffSpellbook|r
-or the |cffffffffDungeon Finder|r, and will not be movable.]]
 
 L.BagToggle = 'Кнопка сумок'
 L.Broker = 'DataBroker'

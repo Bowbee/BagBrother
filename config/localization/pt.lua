@@ -46,10 +46,10 @@ L.Frame = 'Janela'
 L.Enabled = 'Ativar'
 L.EnabledTip = 'Se desativado, as janelas padrão do Blizzard não serao substituídas por esta janela.\n\n|cffff1919Necessário recarregar a interface.|r'
 L.ActPanel = 'Agir como Painel Padrão'
-L.ActPanelTip = 'Se ativado, esta janela irá se posicionar automaticamente como os painéis padrão, como o |cffffffffLivro de Feitiços|r ou o |cffffffffLocalizador de Masmorras|r, e não poderá ser movido.'
-If enabled, this panel will automatically position
-itself as the standard ones do, such as the |cffffffffSpellbook|r
-or the |cffffffffDungeon Finder|r, and will not be movable.]]
+L.ActPanelTip = [[
+Se ativado, esta janela irá se posicionar automaticamente
+como os painéis padrão, como o |cffffffffLivro de Feitiços|r ou o
+|cffffffffLocalizador de Masmorras|r, e não poderá ser movido.]]
 
 L.BagToggle = 'Lista de Bolsas'
 L.Broker = 'DataBroker'

@@ -49,9 +49,6 @@ L.ActPanel = 'Considera come Finestra Standard'
 L.ActPanelTip = [[
 Se abilitato, questa finestra si posizionerà automaticamente come quelle standard dell\'interfaccia, come quella del |cffffffffGrimorio|r
  o della |cffffffffRicerca delle Incursioni|r, e non potrà essere spostata.]]
-If enabled, this panel will automatically position
-itself as the standard ones do, such as the |cffffffffSpellbook|r
-or the |cffffffffDungeon Finder|r, and will not be movable.]]
 
 L.BagToggle = 'Attiva Riquadro Borse'
 L.Broker = 'Plugins Databroker'
