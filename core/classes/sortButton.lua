@@ -45,19 +45,11 @@ end
 function SortButton:OnClick(button)
 	if button == 'RightButton' then
 		local hasServer = self.frame.ServerSort
+		local onlyLocal = function() return not (hasServer and self.frame.profile.serverSort) end
 		
 		MenuUtil.CreateContextMenu(self, function(_, menu)
 			menu:SetTag(ADDON .. 'CleanupOptions')
 			menu:CreateTitle(L.CleanupOptions)
-
-			if hasServer then
-				menu:CreateCheckbox(L.ServerSorting,
-					function() return self.frame.profile.serverSort end,
-					function(_, _, menu)
-						self.frame.profile.serverSort = not self.frame.profile.serverSort
-						menu:ReinitializeAll()
-					end)
-			end
 
 			menu:CreateCheckbox(L.ReverseSorting,
 				function()
@@ -79,12 +71,21 @@ function SortButton:OnClick(button)
 				function() return C.Container.GetInsertItemsLeftToRight() end,
 				function(_,_, menu) DelayedToggle(menu, 'GetInsertItemsLeftToRight', 'SetInsertItemsLeftToRight') end)
 
-			--[[local partial = menu:CreateCheckbox(L.PartialFirst,
-				function() return self.frame.profile.partialFirst end,
-				function() self.frame.profile.partialFirst = not self.frame.profile.partialFirst end)
-			partial:SetEnabled(not (hasServer and self.frame.profile.serverSort))]]-- will reorganize UI first, to not cause confusion
+			if hasServer then
+				menu:CreateDivider()
+				menu:CreateCheckbox(L.ServerSorting,
+					function() return self.frame.profile.serverSort end,
+					function()
+						self.frame.profile.serverSort = not self.frame.profile.serverSort
+					end)
+			end
 
-			menu:CreateButton('|A:legionmission-lock:14:14|a ' .. L.LockItems, function() self:OnLocking() end)
+			menu:CreateCheckbox(L.PartialFirst,
+					function() return self.frame.profile.partialFirst end,
+					function() self.frame.profile.partialFirst = not self.frame.profile.partialFirst end)
+				:SetEnabled(onlyLocal)
+			menu:CreateButton('|A:legionmission-lock:14:14|a ' .. L.LockItems,
+					function() self:OnLocking() end):SetEnabled(onlyLocal)
 		end)
 	elseif not self:GetChecked() then
 		return Addon.Sorting:Stop()
