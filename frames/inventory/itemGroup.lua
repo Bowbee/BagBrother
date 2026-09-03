@@ -4,8 +4,6 @@
 --]]
 
 local ADDON, Addon =  ...
-local C = LibStub('C_Everywhere').Container
-
 local Items = Addon.ItemGroup:NewClass('ContainerItemGroup')
 Items.Button = Addon.ContainerItem
 

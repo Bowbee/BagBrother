@@ -38,23 +38,25 @@ function Item:Construct()
 	return b
 end
 
-if C.Bank.AreAnyBankTypesViewable then
-	function Item:PreClick(button)
-		if Addon.Events.AtBank and self.hasItem then
-			if button == 'RightButton' and Addon.Frames:IsEnabled('bank') then
-				local bankType = Addon_GetBankType()
-				bankType = IsShiftKeyDown() and (2 - bankType) or bankType
-				bankType = not C.Bank.CanUseBank(bankType) and (2 - bankType) or bankType
+function Item:ShowTooltip()
+	self:Super(Item):ShowTooltip()
+	self:MarkSeen()
 
-				C.Container.UseContainerItem(self:GetBag(), self:GetID(), nil, bankType)
-			end
-		end
+	if self.BankPreClick then
+		self:SetScript('PreClick', not InCombatLockdown() and self.BankPreClick or nil)
 	end
 end
 
-function Item:OnEnter()
-	self:Super(Item):OnEnter()
-	self:MarkSeen()
+if C.Bank.AreAnyBankTypesViewable then
+	function Item:BankPreClick(button)
+		if button == 'RightButton' and Addon.Events.AtBank and Addon.Frames:IsEnabled('bank') then
+			local bankType = Addon_GetBankType()
+			bankType = IsShiftKeyDown() and (2 - bankType) or bankType
+			bankType = not C.Bank.CanUseBank(bankType) and (2 - bankType) or bankType
+
+			C.Container.UseContainerItem(self:GetBag(), self:GetID(), nil, bankType)
+		end
+	end
 end
 
 
